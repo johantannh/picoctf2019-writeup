@@ -66,8 +66,8 @@ Written as part of learning experience
 |:----------------------------------------------------------------------|:-------|:-------|
 | [inspect-me](web-exploitation#inspect-me)                             | 125    | Unsolved |
 | [client-side-is-still-bad](web-exploitation#client-side-is-still-bad) | 150    | Unsolved |
-| [logon](web-exploitation#logon)           | 150        | Solved |
+| [logon](web-exploitation#logon)           | 150        | Unsolved |
 | [irish-name-repo](web-exploitation#irish-name-repo)             | 200        | Unsolved |
-| [name](web-exploitation#name)             | 100        | Solved |
+| [name](web-exploitation#name)             | 100        | Unsolved |
 
 - - -
