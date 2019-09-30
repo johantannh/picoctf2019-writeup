@@ -1,37 +1,19 @@
-# Lets Warm Up
-Points: 50
+# The-Factory's-Secret 
+Points: 1
 
 ## Problem
->If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?
+>There appear to be some mysterious glyphs hidden inside this [abandoned factory](https://2019game.picoctf.com/game)... I wonder what would happen if you collected them all?
 
 ### Hint
->Submit your answer in our competition's flag format. For example, if you answer was 'hello', you would submit 'picoCTF{hello}' as the flag.
+>Submit your answer in our competition's flag format. For example, if you answer was 'hello', you would submit 'picoCTF{hello}' as the flag
 
 ## Solution
-Use online table to reference 0x70 to ascii.
+Solution
 
 ### Flag
-`picoCTF{p}`
+`Flag
 
 - - -
-
-# Warmed Up
-Points: 50
-
-## Problem
->What is 0x3D (base 16) in decimal (base 10).
-
-### Hint
->Submit your answer in our competition's flag format. For example, if you answer was '22', you would submit 'picoCTF{22}' as the flag.
-
-## Solution
-Use any hexa to dec calculator.
-
-### Flag
-`picoCTF{61}`
-
-- - -
-
 # 2Warm
 Points: 50
 
@@ -48,6 +30,42 @@ Use any dec to bin calculator
 `picoCTF{101010}`
 
 - - -
+
+# Lets-Warm-Up
+Points: 50
+
+## Problem
+>If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?
+
+### Hint
+>Submit your answer in our competition's flag format. For example, if you answer was 'hello', you would submit 'picoCTF{hello}' as the flag.
+
+## Solution
+Use online table to reference 0x70 to ascii.
+
+### Flag
+`picoCTF{p}`
+
+- - -
+
+# Warmed-Up
+Points: 50
+
+## Problem
+>What is 0x3D (base 16) in decimal (base 10).
+
+### Hint
+>Submit your answer in our competition's flag format. For example, if you answer was '22', you would submit 'picoCTF{22}' as the flag.
+
+## Solution
+Use any hexa to dec calculator.
+
+### Flag
+`picoCTF{61}`
+
+- - -
+
+
 
 # Bases
 Points: 100
@@ -66,7 +84,7 @@ Decode 'bDNhcm5fdGgzX3IwcDM1' from Base64 format
 
 - - -
 
-# First Grep
+# First-Grep
 Points: 100
 
 ## Problem
@@ -97,7 +115,7 @@ Solution here
 
 - - -
 
-# strings it
+# strings-it
 Points: 100
 
 ## Problem
@@ -122,6 +140,60 @@ Points: 100
 
 ### Hint
 >nc [tutorial](https://linux.die.net/man/1/nc)
+
+## Solution
+Solution here
+
+### Flag
+`Flag`
+
+- - -
+
+
+# Based
+Points: 200
+
+## Problem
+>To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 25180.
+
+### Hint
+>I hear python can convert things. It might help to have multiple windows open
+
+## Solution
+Solution here
+
+### Flag
+`Flag`
+
+- - -
+
+
+# First Grep: Part II 
+Points: 200
+
+## Problem
+>Can you find the flag in /problems/first-grep--part-ii_0_b68f6a4e9cb3a7aad4090dea9dd80ce1/files on the shell server? Remember to use grep.
+
+### Hint
+>grep [tutorial](https://ryanstutorials.net/linuxtutorial/grep.php)
+
+## Solution
+Solution here
+
+### Flag
+`Flag`
+
+- - -
+
+
+# plumbing 
+Points: 200
+
+## Problem
+>Sometimes you need to handle process data outside of a file. Can you find a way to keep the output from this program and search for the flag? Connect to 2019shell1.picoctf.com 9525.
+
+### Hint
+>Remember the flag format is picoCTF{XXXX}  What's a pipe? No not that kind of pipe... This [kind](http://www.linfo.org/pipes.html)
 
 ## Solution
 Solution here
