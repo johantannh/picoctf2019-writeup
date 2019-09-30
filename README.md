@@ -17,9 +17,9 @@ Written as part of learning experience
 
 | Challenges                                 | Points     | Status |
 |:-------------------------------------------|:-----------|:-------|
-| [handy-shellcode](handy-shellcode#name)           | 50        | Unsolved |
-| [practice-run-1](practice-run-1#name)           | 100        | Unsolved |
-| [Ghost_Diary](Ghost_Diary#name)           | 100        | Unsolved |
+| [handy-shellcode](handy-shellcode#handy-shellcode)     | 50         | Unsolved |
+| [practice-run-1](practice-run-1#practice-run-1)        | 100        | Unsolved |
+| [Ghost_Diary](Ghost_Diary#Ghost_Diary)                 | 500        | Unsolved |
 
 ## Forensics [(link)](forensics)
 
