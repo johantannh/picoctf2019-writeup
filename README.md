@@ -35,16 +35,18 @@ Written as part of learning experience
 
 | Challenges                                        | Points     | Status |
 |:--------------------------------------------------|:-----------|:-------|
-| [general-warmup-1](general-skills#general-warmup-1)           | 50         | Solved |
-| [general-warmup-2](general-skills#general-warmup-2)           | 50         | Solved |
-| [general-warmup-3](general-skills#general-warmup-3)           | 50         | Solved |
-| [resources](general-skills#resources)             | 50         | Unsolved |
-| [grep-1](general-skills#grep-1)                   | 75         | Unsolved |
-| [net-cat](general-skills#net-cat)                 | 75         | Unsolved |
-| [strings](general-skills#strings)                 | 100        | Unsolved |
-| [pipe](general-skills#pipe)                       | 110        | Unsolved |
-| [grep-2](general-skills#grep-2)                   | 125        | Unsolved |
-
+| [The Factory's Secret](general-skills#The-Factory's-Secret)            | 1           | Solved |
+| [2Warm](general-skills#2Warm)           								 | 50          | Solved |
+| [Lets Warm Up](general-skills#Lets-Warm-Up)           				 | 50          | Solved |
+| [Warmed Up](general-skills#Warmed-Up)             					 | 50          | Unsolved |
+| [Bases](general-skills#grep-1)                  						 | 100         | Unsolved |
+| [First Grep](general-skills#First-Grep)                 				 | 100         | Unsolved |
+| [Resources](general-skills#Resources)                 				 | 100         | Unsolved |
+| [strings it](general-skills#strings-it)                 				 | 100         | Unsolved |
+| [what's a net cat?](general-skills#what's-a-netcat?)                   | 100         | Unsolved |
+| [Based ](general-skills#based)                 					     | 200         | Unsolved |
+| [First Grep: Part II ](general-skills#First-Grep:-Part-II )            | 200         | Unsolved |
+| [plumbing ](general-skills#plumbing)                       	         | 200         | Unsolved |
 ## Reversing [(link)](reversing)
 
 | Challenges                                  | Points     | Status |
