@@ -49,8 +49,9 @@ Written as part of learning experience
 
 | Challenges                                  | Points     | Status |
 |:--------------------------------------------|:-----------|:-------|
-| [reversing-warmup-1](reversing#reversing-warmup-1)       | 50         | Unsolved |
-| [reversing-warmup-2](reversing#reversing-warmup-2)       | 50         | Unsolved |
+| [vault-door-training](reversing#vault-door-training)      | 50         | Solved |
+| [vault-door-1](reversing#vault-door-1)       				| 100        | Solved |
+| [vault-door-3](reversing#vault-door-3)       				| 200        | Unsolved |
 
 ## Cryptography [(link)](cryptography)
 
