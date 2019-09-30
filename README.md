@@ -64,8 +64,8 @@ Written as part of learning experience
 
 | Challenges                                                            | Points | Status |
 |:----------------------------------------------------------------------|:-------|:-------|
-| [inspect-me](web-exploitation#Insp3ct0r)                              | 50     | Solved   |
-| [client-side-is-still-bad](web-exploitation#dont-use-client-side)     | 100    | Unsolved |
+| [Insp3ct0r](web-exploitation#Insp3ct0r)                               | 50     | Solved   |
+| [dont-use-client-side](web-exploitation#dont-use-client-side)         | 100    | Unsolved |
 | [logon](web-exploitation#logon)                                       | 100    | Unsolved |
 | [where are the robots](web-exploitation#where are the robots)         | 100    | Unsolved |
 | [Java Script Kiddie](web-exploitation#Java Script Kiddie)             | 400    | Unsolved |
