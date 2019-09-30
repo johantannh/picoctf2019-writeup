@@ -56,9 +56,7 @@ Written as part of learning experience
 
 | Challenges                                                | Points     | Status   |
 |:----------------------------------------------------------|:-----------|:---------|
-| [crypto-warmup-1](cryptography#crypto-warmup-1)           | 75         | Unsolved   |
-| [crypto-warmup-2](cryptography#crypto-warmup-2)           | 75         | Unsolved   |
-| [heeeeeeeres-johnny](cryptography#heeeeeeeres-johnny)     | 100        | Unsolved |
+| [The Numbers ](cryptography#The-Numbers		)           | 50        | Unsolved   |
 
 ## Web Exploitation [(link)](web-exploitation)
 
@@ -68,6 +66,6 @@ Written as part of learning experience
 | [dont-use-client-side](web-exploitation#dont-use-client-side)         | 100    | Unsolved |
 | [logon](web-exploitation#logon)                                       | 100    | Unsolved |
 | [where are the robots](web-exploitation#where-are-the-robots)         | 100    | Unsolved |
-| [Java Script Kiddie](web-exploitation#JavaScript-Kiddie)             | 400    | Unsolved |
+| [Java Script Kiddie](web-exploitation#JavaScript-Kiddie)              | 400    | Unsolved |
 
 - - -
