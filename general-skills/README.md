@@ -132,7 +132,7 @@ Solution here
 
 - - -
 
-# what's-a-netcat?
+# whats-a-netcat?
 Points: 100
 
 ## Problem
@@ -168,7 +168,7 @@ Solution here
 - - -
 
 
-# First-Grep:-Part-II 
+# First-Grep-Part-II 
 Points: 200
 
 ## Problem

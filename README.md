@@ -35,18 +35,18 @@ Written as part of learning experience
 
 | Challenges                                        | Points     | Status |
 |:--------------------------------------------------|:-----------|:-------|
-| [The Factory's Secret](general-skills#The-Factory's-Secret)            | 1           | Solved |
+| [The Factory's Secret](general-skills#The-Factory's-Secret)            | 1           | Unsolved |
 | [2Warm](general-skills#2Warm)           								 | 50          | Solved |
 | [Lets Warm Up](general-skills#Lets-Warm-Up)           				 | 50          | Solved |
-| [Warmed Up](general-skills#Warmed-Up)             					 | 50          | Unsolved |
-| [Bases](general-skills#grep-1)                  						 | 100         | Unsolved |
-| [First Grep](general-skills#First-Grep)                 				 | 100         | Unsolved |
-| [Resources](general-skills#Resources)                 				 | 100         | Unsolved |
-| [strings it](general-skills#strings-it)                 				 | 100         | Unsolved |
-| [what's a net cat?](general-skills#what's-a-netcat?)                   | 100         | Unsolved |
+| [Warmed Up](general-skills#Warmed-Up)             					 | 50          | Solved |
+| [Bases](general-skills#bases)                  						 | 100         | Solved |
+| [First Grep](general-skills#First-Grep)                 				 | 100         | Solved |
+| [Resources](general-skills#Resources)                 				 | 100         | Solved |
+| [strings it](general-skills#strings-it)                 				 | 100         | Solved |
+| [what's a net cat?](general-skills#whats-a-netcat?)                    | 100         | Solved |
 | [Based ](general-skills#based)                 					     | 200         | Unsolved |
-| [First Grep: Part II ](general-skills#First-Grep:-Part-II )            | 200         | Unsolved |
-| [plumbing ](general-skills#plumbing)                       	         | 200         | Unsolved |
+| [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Unsolved |
+| [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
 ## Reversing [(link)](reversing)
 
 | Challenges                                  | Points     | Status |
