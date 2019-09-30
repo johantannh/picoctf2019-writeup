@@ -64,10 +64,10 @@ Written as part of learning experience
 
 | Challenges                                                            | Points | Status |
 |:----------------------------------------------------------------------|:-------|:-------|
-| [inspect-me](web-exploitation#inspect-me)                             | 125    | Unsolved |
-| [client-side-is-still-bad](web-exploitation#client-side-is-still-bad) | 150    | Unsolved |
-| [logon](web-exploitation#logon)           | 150        | Unsolved |
-| [irish-name-repo](web-exploitation#irish-name-repo)             | 200        | Unsolved |
-| [name](web-exploitation#name)             | 100        | Unsolved |
+| [inspect-me](web-exploitation#Insp3ct0r)                              | 50     | Solved   |
+| [client-side-is-still-bad](web-exploitation#dont-use-client-side)     | 100    | Unsolved |
+| [logon](web-exploitation#logon)                                       | 100    | Unsolved |
+| [where are the robots](web-exploitation#where are the robots)         | 100    | Unsolved |
+| [Java Script Kiddie](web-exploitation#Java Script Kiddie)             | 400    | Unsolved |
 
 - - -
