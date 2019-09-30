@@ -1,8 +1,8 @@
-# Glory of the Garden
+# Glory-of-the-Garden
 Points: 50
 
 ## Problem
->This [garden](https://2019shell1.picoctf.com/static/4cb555b64c51e0be6ac482d422350f61/garden.jpg) contains more than it seems. You can also find the file in /problems/glory-of-the-garden_6_7eeaa66ad1ee7a7b11096c8028a966dc on the shell server.
+>This [garden](https://2019shell1.picoctf.com/static/4cb555b64c51e0be6ac482d422350f61/garden.jpg) contains more than it seems. You can also find the file in You can also find the file in /problems/glory-of-the-garden_6_0d6d3ea97757b84c7a51a38daa7dca8d on the shell server.
 
 ### Hint
 >What is a hex editor?
@@ -19,7 +19,7 @@ Solution here
 Points: 50
 
 ## Problem
->Can you unzip this [file](https://2019shell1.picoctf.com/static/97e37c0fc127ea82eabeb6a32bf18ce0/flag.zip) and get the flag?
+>Can you unzip this [file](https://2019shell1.picoctf.com/static/37762a7e5774d7d6c1bc79e8e1758ef9/flag.zip) and get the flag?
 
 ### Hint
 >put the flag in the format picoCTF{XXXXX}

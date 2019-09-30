@@ -25,11 +25,11 @@ Written as part of learning experience
 
 | Challenges                                                     | Points | Status |
 |:---------------------------------------------------------------|:-------|:-------|
-| [forensics-warmup-1](forensics#forensics-warmup-1)             | 50     | Unsolved |
-| [forensics-warmup-2](forensics#forensics-warmup-2)             | 50     | Unsolved |
-| [desrouleaux](forensics#desrouleaux)                           | 150    | Unsolved |
-| [reading-between-the-eyes](forensics#reading-between-the-eyes) | 150    | Unsolved |
-| [recovering-from-the-snap](forensics#recovering-from-the-snap) | 150    | Unsolved |
+| [Glory of the Garden](forensics#Glory-of-the-Garden)           | 50     | Unsolved |
+| [unzip](forensics#unzip)            							 | 50     | Unsolved |
+| [So Meta](forensics#			)                          		 | 150    | Unsolved |
+| [What Lies Within](forensics#) 							     | 150    | Unsolved |
+| [extensions](forensics#extensions) 						     | 150    | Unsolved |
 
 ## General Skills [(link)](general-skills)
 
