@@ -11,7 +11,7 @@ Points: 1
 Solution
 
 ### Flag
-`Flag
+`Flag`
 
 - - -
 # 2Warm
@@ -94,10 +94,10 @@ Points: 100
 >grep [tutorial](https://ryanstutorials.net/linuxtutorial/grep.php)
 
 ## Solution
-Solution here
+To be done
 
 ### Flag
-`Flag`
+`picoCTF{grep_is_good_to_find_things_205b65d7}`
 
 - - -
 
@@ -108,10 +108,11 @@ Points: 100
 >We put together a bunch of resources to help you out on our website! If you go over there, you might even find a flag! https://picoctf.com/resources (link)
 
 ## Solution
-Solution here
+1. Visit https://picoctf.com/resources
+2. The flag is on the page itself.
 
 ### Flag
-`Flag`
+`picoCTF{r3source_pag3_f1ag}`
 
 - - -
 
@@ -125,10 +126,10 @@ Points: 100
 >[strings](https://linux.die.net/man/1/strings)
 
 ## Solution
-Solution here
+1. Run `strings` cmd  and `grep` cmd on the file downloaded 
 
 ### Flag
-`Flag`
+`picoCTF{r3source_pag3_f1ag}`
 
 - - -
 
@@ -136,16 +137,16 @@ Solution here
 Points: 100
 
 ## Problem
->Using netcat (nc) is going to be pretty important. Can you connect to 2019shell1.picoctf.com at port 49816 to get the flag?
+>Using netcat (nc) is going to be pretty important. Can you connect to 2019shell1.picoctf.com at port 32225 to get the flag?
 
 ### Hint
 >nc [tutorial](https://linux.die.net/man/1/nc)
 
 ## Solution
-Solution here
+1. Run `nc 2019shell1.picoctf.com 32225` to get the flag
 
 ### Flag
-`Flag`
+`picoCTF{nEtCat_Mast3ry_b1d25ece}`
 
 - - -
 
@@ -183,6 +184,7 @@ Solution here
 ### Flag
 `Flag`
 
+
 - - -
 
 
@@ -196,9 +198,8 @@ Points: 200
 >Remember the flag format is picoCTF{XXXX}  What's a pipe? No not that kind of pipe... This [kind](http://www.linfo.org/pipes.html)
 
 ## Solution
-Solution here
+1. Run `nc 2019shell1.picoctf.com 9525 > out.txt` and `grep` cmd to get the flag
 
 ### Flag
-`Flag`
-
+`picoCTF{digital_plumb3r_dd86d037}`
 - - -

@@ -35,7 +35,7 @@ Written as part of learning experience
 
 | Challenges                                        | Points     | Status |
 |:--------------------------------------------------|:-----------|:-------|
-| [The Factory's Secret](general-skills#The-Factory's-Secret)            | 1           | Unsolved |
+| [The Factory's Secret](general-skills#The-Factorys-Secret)            | 1           | Unsolved |
 | [2Warm](general-skills#2Warm)           								 | 50          | Solved |
 | [Lets Warm Up](general-skills#Lets-Warm-Up)           				 | 50          | Solved |
 | [Warmed Up](general-skills#Warmed-Up)             					 | 50          | Solved |
