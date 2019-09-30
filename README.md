@@ -66,7 +66,7 @@ Written as part of learning experience
 | [Insp3ct0r](web-exploitation#Insp3ct0r)                               | 50     | Solved   |
 | [dont-use-client-side](web-exploitation#dont-use-client-side)         | 100    | Unsolved |
 | [logon](web-exploitation#logon)                                       | 100    | Unsolved |
-| [where are the robots](web-exploitation#where-are-the-robots)         | 100    | Unsolved |
+| [where are the robots](web-exploitation#where-are-the-robots)         | 100    | Solved   |
 | [picobrowser](web-exploitation#picobrowser)         					| 200    | Unsolved |
 | [Java Script Kiddie](web-exploitation#JavaScript-Kiddie)              | 400    | Unsolved |
 
