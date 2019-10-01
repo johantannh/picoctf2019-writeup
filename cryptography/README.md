@@ -31,7 +31,7 @@ Points: 100
 
 ```
 cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}
-````
+```
 
 ### Hint
 >This can be solved online if you don't want to do it by hand!
@@ -40,7 +40,7 @@ cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}
 The encrypted code above can be decrypted online here using the [ROT13](https://www.dcode.fr/rot-13-cipher) encryptor & decryptor
 ```
 cvpbPGS{abg_gbb_onq_bs_n_ceboyrz} => picoCTF{not_too_bad_of_a_problem}
-````
+```
 
 ### Flag
 `picoCTF{not_too_bad_of_a_problem}`
@@ -48,14 +48,14 @@ cvpbPGS{abg_gbb_onq_bs_n_ceboyrz} => picoCTF{not_too_bad_of_a_problem}
 - - - 
 
 # caesar 
-Points: 1a00
+Points: 100
 
 ## Problem
 >Decrypt this [message](https://2019shell1.picoctf.com/static/48df1c1cea3578bb350dd089a9f0bc10/ciphertext) . You can find the ciphertext in /problems/caesar_0_22aa542fadadcc37b6ec6037c493ec9f on the shell server.
 
 ```
 picoCTF{jyvzzpunaolybipjvunfzpthre}
-````
+```
 
 ### Hint
 >caesar cipher [tutorial](https://learncryptography.com/classical-encryption/caesar-cipher)
@@ -65,7 +65,27 @@ The encrypted code above can be decrypted online here using the [Caesar-Cipher](
 
 ```
 picoCTF{jyvzzpunaolybipjvunfzpthre} => picoCTF{crossingtherubicongysimakx}
-````
+```
 
 ### Flag
 `picoCTF{crossingtherubicongysimakx}`
+
+- - - 
+
+# Flags 
+Points: 200
+
+## Problem
+>What do the [flags](https://2019shell1.picoctf.com/static/ae23b7df04365ab0213f0158c5b5d694/flag.png) mean?
+
+### Hint
+>The flag is in the format PICOCTF{}
+
+## Solution
+
+Need to use brute force techniques to fill in unknown 8 capital letters. `PICOCTF{FabdebgheTzFF}`. Need refer to immersive labs, there is a lab that can brute force known strings
+
+### Flag
+`flag`
+
+- - - 

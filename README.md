@@ -17,9 +17,10 @@ Written as part of learning experience
 
 | Challenges                                 | Points     | Status |
 |:-------------------------------------------|:-----------|:-------|
-| [handy-shellcode](handy-shellcode#handy-shellcode)     | 50         | Unsolved |
-| [practice-run-1](practice-run-1#practice-run-1)        | 100        | Unsolved |
-| [Ghost_Diary](Ghost_Diary#Ghost_Diary)                 | 500        | Unsolved |
+| [handy-shellcode](binary-exploitation#handy-shellcode)     | 50         | Unsolved |
+| [practice-run-1](binary-exploitation#practice-run-1)        | 100        | Solved |
+| [OverFlow 0](binary-exploitation#OverFlow-0)        | 100        | Solved |
+| [Ghost_Diary](binary-exploitation#Ghost_Diary)                 | 500        | Unsolved |
 
 ## Forensics [(link)](forensics)
 
@@ -27,8 +28,8 @@ Written as part of learning experience
 |:---------------------------------------------------------------|:-------|:-------|
 | [Glory of the Garden](forensics#Glory-of-the-Garden)           | 50     | Unsolved |
 | [unzip](forensics#unzip)            							 | 50     | Unsolved |
-| [So Meta](forensics#			)                          		 | 150    | Unsolved |
-| [What Lies Within](forensics#) 							     | 150    | Unsolved |
+| [So Meta](forensics#so-meta)                          		 | 150    | Unsolved |
+| [What Lies Within](forensics#what-lies-within) 							     | 150    | Unsolved |
 | [extensions](forensics#extensions) 						     | 150    | Unsolved |
 
 ## General Skills [(link)](general-skills)
@@ -65,9 +66,10 @@ Written as part of learning experience
 ## Cryptography [(link)](cryptography)
 | Challenges                                                | Points     | Status   |
 |:----------------------------------------------------------|:-----------|:---------|
-| [The Numbers ](cryptography#The-Numbers		)           | 50        | Solved   |
-| [13](cryptography#13		)           | 100        | Solved   |
-| [caesar](cryptography#caesar		)           | 100        | Solved   |
+| [The Numbers ](cryptography#The-Numbers)           | 50        | Solved   |
+| [13](cryptography#13)           | 100        | Solved   |
+| [caesar](cryptography#caesar)           | 100        | Solved   |
+| [Flag](cryptography#Flag)           | 200        | Unsolved   |
 
 ## Web Exploitation [(link)](web-exploitation)
 
