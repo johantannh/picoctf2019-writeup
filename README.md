@@ -47,19 +47,27 @@ Written as part of learning experience
 | [Based ](general-skills#based)                 					     | 200         | Unsolved |
 | [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Unsolved |
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
-## Reversing [(link)](reversing)
 
+
+## Reversing [(link)](reversing)
 | Challenges                                  | Points     | Status |
 |:--------------------------------------------|:-----------|:-------|
 | [vault-door-training](reversing#vault-door-training)      | 50         | Solved |
 | [vault-door-1](reversing#vault-door-1)       				| 100        | Solved |
-| [vault-door-3](reversing#vault-door-3)       				| 200        | Unsolved |
+| [vault-door-3](reversing#vault-door-3)       				| 200        | Solved |
+| [vault-door-4](reversing#vault-door-4)       				| 250        | Solved |
+| [vault-door-5](reversing#vault-door-5)       				| 300        | Solved |
+| [vault-door-6](reversing#vault-door-6)       				| 350        | Solved |
+| [vault-door-7](reversing#vault-door-7)       				| 400        | Solved |
+| [asm1](reversing#vasm1)       				| 200        | Solved |
+
 
 ## Cryptography [(link)](cryptography)
-
 | Challenges                                                | Points     | Status   |
 |:----------------------------------------------------------|:-----------|:---------|
-| [The Numbers ](cryptography#The-Numbers		)           | 50        | Unsolved   |
+| [The Numbers ](cryptography#The-Numbers		)           | 50        | Solved   |
+| [13](cryptography#13		)           | 100        | Solved   |
+| [caesar](cryptography#caesar		)           | 100        | Solved   |
 
 ## Web Exploitation [(link)](web-exploitation)
 
