@@ -85,6 +85,8 @@ public boolean checkPassword(String password) {
 Points: 200
 
 ## Problem
+This vault uses for-loops and byte arrays. The source code for this vault is here: [VaultDoor3.java](
+https://2019shell1.picoctf.com/static/e3c91f3cd8fb4d926e10ec20ecf074b6/VaultDoor3.java)
 
 ### Hint
 >Make a table that contains each value of the loop variables and the corresponding buffer index that it writes to.
@@ -92,4 +94,93 @@ Points: 200
 ## Solution
 
 ### Flag
+
 - - -
+
+# vault-door-4
+Points: 250
+
+## Problem
+This vault uses ASCII encoding for the password. The source code for this vault is here: [VaultDoor4.java](https://2019shell1.picoctf.com/static/069d0ac8cb5ef3a4380155b2902d931c/VaultDoor4.java)
+
+### Hint
+>Use a search engine to find an "ASCII table".
+>You will also need to know the difference between octal, decimal, and hexademical numbers.
+
+## Solution
+
+### Flag
+```
+decimal : jU5t_4_b 
+hex : UnCh_0f_ 
+oct : (convert decimal then hex) bYt3s_3a
+char : 724c8f92 
+picoCTF{jU5t_4_bUnCh_0f_bYt3s_3a724c8f92}
+```
+- - -
+
+# vault-door-5
+Points: 300
+
+## Problem
+In the last challenge, you mastered octal (base 8), decimal (base 10), and hexadecimal (base 16) numbers, but this vault door uses a different change of base as well as URL encoding! The source code for this vault is here: [VaultDoor5.java](https://2019shell1.picoctf.com/static/973481b7e1f7abc490c49061c415722d/VaultDoor5.java)
+
+### Hint
+>You may find an encoder/decoder tool helpful, such as https://encoding.tools/
+>Read the wikipedia articles on URL encoding and base 64 encoding to understand how they work and what the results look like.
+
+## Solution
+
+### Flag
+picoCTF{c0nv3rt1ng_fr0m_ba5e_64_da882d01}
+
+- - -
+
+# vault-door-6
+Points: 350
+
+## Problem
+This vault uses an XOR encryption scheme. The source code for this vault is here: [VaultDoor6.java](https://2019shell1.picoctf.com/static/85cf337e69ef98ce5fde6972bf58c5bf/VaultDoor6.java)
+
+### Hint
+>If X ^ Y = Z, then Z ^ Y = X. Write a program that decrypts the flag based on this fact.
+
+## Solution
+
+### Flag
+picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_3484ebc}
+
+- - -
+
+# vault-door-7
+Points: 400
+
+## Problem
+This vault uses bit shifts to convert a password string into an array of integers. Hurry, agent, we are running out of time to stop Dr. Evil's nefarious plans! The source code for this vault is here: [VaultDoor7.java](https://2019shell1.picoctf.com/static/65415dd6da943c05146d9b8279d6ccc6/VaultDoor7.java)
+
+### Hint
+>Use a decimal/hexademical converter such as this one: https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html
+>You will also need to consult an ASCII table such as this one: https://www.asciitable.com/
+
+## Solution
+
+### Flag
+picoCTF{A_b1t_0f_b1t_sh1fTiNg_97cb1f367b}
+
+- - -
+
+# vault-door-8
+Points: 450
+
+## Problem
+Apparently Dr. Evil's minions knew that our agency was making copies of their source code, because they intentionally sabotaged this source code in order to make it harder for our agents to analyze and crack into! The result is a quite mess, but I trust that my best special agent will find a way to solve it. The source code for this vault is here: [VaultDoor8.java](https://2019shell1.picoctf.com/static/4fb5848a676119dbc837ca447cdfb556/VaultDoor8.java)
+
+### Hint
+>Clean up the source code so that you can read it and understand what is going on.
+>Draw a diagram to illustrate which bits are being switched in the scramble() method, then figure out a sequence of bit switches to undo it. You should be able to reuse the switchBits() method as is.
+
+## Solution
+
+### Flag
+picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}
+
