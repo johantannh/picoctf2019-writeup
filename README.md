@@ -80,9 +80,10 @@ Written as part of learning experience
 | Challenges                                                            | Points | Status |
 |:----------------------------------------------------------------------|:-------|:-------|
 | [Insp3ct0r](web-exploitation#Insp3ct0r)                               | 50     | Solved   |
-| [dont-use-client-side](web-exploitation#dont-use-client-side)         | 100    | Unsolved |
-| [logon](web-exploitation#logon)                                       | 100    | Unsolved |
+| [dont-use-client-side](web-exploitation#dont-use-client-side)         | 100    | Solved |
+| [logon](web-exploitation#logon)                                       | 100    | Solved |
 | [where are the robots](web-exploitation#where-are-the-robots)         | 100    | Solved   |
+| [Client-side-again](web-exploitation#Client-side-again)              | 200    | Solved |
 | [picobrowser](web-exploitation#picobrowser)         					| 200    | Unsolved |
 | [Java Script Kiddie](web-exploitation#JavaScript-Kiddie)              | 400    | Unsolved |
 
