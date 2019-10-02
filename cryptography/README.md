@@ -83,7 +83,7 @@ Points: 200
 
 ## Solution
 
-Need to use brute force techniques to fill in unknown 8 capital letters. `PICOCTF{FabdebgheTzFF}`. Need refer to immersive labs, there is a lab that can brute force known strings
+Need to use brute force techniques to fill in unknown 8 capital letters. `PICOCTF{FabdebgheTzFF}`. 
 
 ### Flag
 `flag`
