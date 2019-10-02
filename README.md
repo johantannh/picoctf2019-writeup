@@ -74,7 +74,7 @@ Written as part of learning experience
 | [Mr-Worldwide](cryptography#Mr-Worldwide)           					 | 200        | Unsolved   |
 | [Tapping](cryptography#Tapping)           					 | 200        | Solved   |
 | [la-cifra-de](cryptography#la-cifra-de)           					 | 200        | Unsolved   |
-| [rsa-pop-quiz](cryptography# rsa-pop-quiz)           					 | 200        | Unsolved   |
+| [rsa-pop-quiz](cryptography#rsa-pop-quiz)           					 | 200        | Unsolved   |
 ## Web Exploitation [(link)](web-exploitation)
 
 | Challenges                                                            | Points | Status |
