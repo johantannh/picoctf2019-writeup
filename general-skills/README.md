@@ -8,10 +8,23 @@ Points: 1
 >Submit your answer in our competition's flag format. For example, if you answer was 'hello', you would submit 'picoCTF{hello}' as the flag
 
 ## Solution
-Solution
+Play the unity game on the picoCTF website, every location got a glyph, get all 6 to solve it.
+| Challenges                                 | Solve     | Glyph Obtained |
+|:-------------------------------------------|:-----------|:-------|
+| Reverse Engineering                        | 2413         | Yes |
+| Forensics                                  | Top right in the river | Yes |
+| Cryptography                               | 5th from top, 5 to the right | Yes |
+| Binary Exploit                             | R,B,R,B,R,B until yellow door | Yes |
+| General Skills                             | Right infront | Yes |
+| Web Exploit                                | Btm right, bottom wall has teleporter to top left | Yes |
+
+Scan QR get password
+password: xmfv53uqkf621gakvh502gxfu1g78glds
+
+Go to starting computer, type in password and view message log. Theres a short funny message that comes out which tells you the secret.
 
 ### Flag
-`Flag`
+`picoCTF{zerozerozerozero}`
 
 - - -
 # 2Warm
