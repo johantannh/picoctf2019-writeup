@@ -89,3 +89,83 @@ Need to use brute force techniques to fill in unknown 8 capital letters. `PICOCT
 `flag`
 
 - - - 
+
+
+# Mr-Worldwide
+Points: 200
+
+## Problem
+>A musician left us a [message](https://2019shell1.picoctf.com/static/46e165b0a953075440f3a544fdb4cff1/message.txt). What's it mean?
+
+### Hint
+>Nil
+
+## Solution
+
+Solution
+
+### Flag
+`flag`
+
+- - - 
+
+
+# Tapping
+Points: 200
+
+## Problem
+>Theres tapping coming in from the wires. What's it saying `nc 2019shell1.picoctf.com 37920`.
+
+
+### Hint
+>What kind of encoding uses dashes and dots? The flag is in the format PICOCTF{}
+
+## Solution
+
+1. Run  `nc 2019shell1.picoctf.com 37920`
+2. Get the flag and use an online morse code decoder to decode the flag.
+
+### Flag
+`PICOCTF{M0RS3C0D31SFUN3960854397}`
+
+- - - 
+
+
+# la-cifra-de
+Points: 200
+
+## Problem
+>I found this cipher in an old book. Can you figure out what it says? Connect with `nc 2019shell1.picoctf.com 60147`
+
+
+### Hint
+>There are tools that make this easy. Perhaps looking at history will help
+
+## Solution
+
+Solution
+
+### Flag
+`Flag`
+
+- - - 
+
+
+# rsa-pop-quiz
+Points: 200
+
+## Problem
+>Class, take your seats! It's PRIME-time for a quiz... ` 2019shell1.picoctf.com 48028`
+
+
+### Hint
+>[RSA Info](https://simple.wikipedia.org/wiki/RSA_algorithm)
+
+## Solution
+
+Solution
+
+### Flag
+`Flag`
+
+- - - 

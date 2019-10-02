@@ -66,11 +66,15 @@ Written as part of learning experience
 ## Cryptography [(link)](cryptography)
 | Challenges                                                | Points     | Status   |
 |:----------------------------------------------------------|:-----------|:---------|
-| [The Numbers ](cryptography#The-Numbers)           | 50        | Solved   |
-| [13](cryptography#13)           | 100        | Solved   |
-| [caesar](cryptography#caesar)           | 100        | Solved   |
-| [Flag](cryptography#Flag)           | 200        | Unsolved   |
-
+| [The Numbers ](cryptography#The-Numbers)       		 	 | 50        | Solved   |
+| [13](cryptography#13)          							 | 100        | Solved   |
+| [Easy1](cryptography#Easy1)         				   		  | 100        | Solved   |
+| [caesar](cryptography#caesar)         				     | 100        | Solved   |
+| [Flags](cryptography#Flags)           					 | 200        | Unsolved   |
+| [Mr-Worldwide](cryptography#Mr-Worldwide)           					 | 200        | Unsolved   |
+| [Tapping](cryptography#Tapping)           					 | 200        | Solved   |
+| [la-cifra-de](cryptography#la-cifra-de)           					 | 200        | Unsolved   |
+| [rsa-pop-quiz](cryptography# rsa-pop-quiz)           					 | 200        | Unsolved   |
 ## Web Exploitation [(link)](web-exploitation)
 
 | Challenges                                                            | Points | Status |
