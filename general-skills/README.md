@@ -179,10 +179,12 @@ Points: 200
 >grep [tutorial](https://ryanstutorials.net/linuxtutorial/grep.php)
 
 ## Solution
-Solution here
+1. Change directory to the abovementioned directory
+2. Run the following cmd `grep -r "picoCTF" .` to get the flag
+
 
 ### Flag
-`Flag`
+`picoCTF{grep_r_to_find_this_e4fa3ba7}`
 
 
 - - -
@@ -202,4 +204,38 @@ Points: 200
 
 ### Flag
 `picoCTF{digital_plumb3r_dd86d037}`
+- - -
+
+# whats-the-difference 
+Points: 200
+
+## Problem
+>Can you spot the difference? [kitters](https://2019shell1.picoctf.com/static/473cf765877f28edf95140f90cd76b59/kitters.jpg) [cattos](https://2019shell1.picoctf.com/static/473cf765877f28edf95140f90cd76b59/cattos.jpg). They are also available at /problems/whats-the-difference_0_00862749a2aeb45993f36cc9cf98a47a on the shell server
+
+### Hint
+>How do you find the difference between two files? Dumping the data from a hex editor may make it easier to compare.
+
+## Solution
+Solution
+
+### Flag
+`Flag`
+- - -
+
+# where-is-the-file  
+Points: 200
+
+## Problem
+>I've used a super secret mind trick to hide this file. Maybe something lies in /problems/where-is-the-file_2_f1aa319cafd4b55ee4a60c1ba65255e2.
+
+### Hint
+>What command can see/read files? What's in the manual page of ls?
+
+## Solution
+1. Change directory to the abovementioned directory
+2. Run the following cmd `ls -la` to get the hidden file
+3. Run the cat cmd on the file to get the flag.
+
+### Flag
+`picoCTF{w3ll_that_d1dnt_w0RK_30444bc6}`
 - - -

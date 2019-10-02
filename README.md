@@ -46,10 +46,10 @@ Written as part of learning experience
 | [strings it](general-skills#strings-it)                 				 | 100         | Solved |
 | [what's a net cat?](general-skills#whats-a-netcat?)                    | 100         | Solved |
 | [Based ](general-skills#based)                 					     | 200         | Unsolved |
-| [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Unsolved |
+| [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Solved |
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
-
-
+| [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Unsolved |
+| [where-is-the-file  ](general-skills#where-is-the-file )               | 200         | Solved |
 ## Reversing [(link)](reversing)
 | Challenges                                  | Points     | Status |
 |:--------------------------------------------|:-----------|:-------|
@@ -60,7 +60,7 @@ Written as part of learning experience
 | [vault-door-5](reversing#vault-door-5)       				| 300        | Solved |
 | [vault-door-6](reversing#vault-door-6)       				| 350        | Solved |
 | [vault-door-7](reversing#vault-door-7)       				| 400        | Solved |
-| [asm1](reversing#vasm1)       				| 200        | Solved |
+| [asm1](reversing#vasm1)       							| 200        | Solved |
 
 
 ## Cryptography [(link)](cryptography)
