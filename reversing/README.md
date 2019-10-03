@@ -37,7 +37,7 @@ Same as the previous task, the password is within the checkPassword method. Upon
 
 Length of Password = 32. 
 
-```
+```java
 public boolean checkPassword(String password) {
         return password.length() == 32 &&
                password.charAt(0)  == 'd' &&
@@ -75,6 +75,67 @@ public boolean checkPassword(String password) {
     }
 ```
 
+To retrieve the password, 
+- Method 1 : Either run the same code on a new console application, replace 'password.chartAt(' with a temp variables
+- Method 2 : Use notepad++ with line operation to re-arrange the lines according to the index number to retreive the flag for this problem. 
+
+##### Run Code Via IDE [Method 1](https://repl.it/@x3sphiorx/vd1)
+```java
+class Main {
+  public static void main(String[] args) {
+    printPassword();
+  }
+
+  public static void printPassword(){
+    char[] temp = new char[32];
+    temp[0] = 'd';
+    temp[29] = 'f';
+    temp[4] = 'r';
+    temp[2] = '5';
+    temp[23] = 'r';
+    temp[3] = 'c';
+    temp[17] = '4';
+    temp[1] = '3';
+    temp[7] = 'b';
+    temp[10] = '_';
+    temp[5] = '4';
+    temp[9] = '3';
+    temp[11] = 't';
+    temp[15] = 'c';
+    temp[8] = 'l';
+    temp[12] = 'H';
+    temp[20] = 'c';
+    temp[14] = '_';
+    temp[6] = 'm';
+    temp[24] = '5';
+    temp[18] = 'r';
+    temp[13] = '3';
+    temp[19] = '4';
+    temp[21] = 'T';
+    temp[16] = 'H';
+    temp[27] = '3';
+    temp[30] = '3';
+    temp[25] = '_';
+    temp[22] = '3';
+    temp[28] = 'e';
+    temp[26] = '6';
+    temp[31] = 'a';
+
+    String t = "picoCTF{";
+	
+    for (char x : temp){
+		t += x;
+    }
+
+    t += "}";
+	
+    System.out.println(t);
+  }
+}
+```
+
+##### Arrange Using Notepad++ & Excel [Method 2]()
+
 
 ### Flag
 `picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_63ef3a}`
@@ -93,8 +154,59 @@ https://2019shell1.picoctf.com/static/e3c91f3cd8fb4d926e10ec20ecf074b6/VaultDoor
 
 ## Solution
 
-### Flag
 
+```java
+import java.util.Scanner;
+
+class Main {
+  static String CipherText = "jU5t_a_sna_3lpm13gc49_u_4_m0rf41";
+
+  public static void main(String[] args) {
+    String userInput = "picoCTF{" + CipherText + "}";
+    System.out.println("Enter vault password: " + userInput);
+
+    String input = userInput.substring("picoCTF{".length(), userInput.length() - 1);
+
+    if (checkPassword(input)) {
+      System.out.println("Access granted.");
+    } else {
+      System.out.println("Access denied!");
+    }
+  }
+
+  public static boolean checkPassword(String password) {
+    char[] buffer = new char[32];
+    int i;
+
+    if (password.length() != 32) {
+      return false;
+    }
+
+    for (i = 0; i < 8; i++) {
+      buffer[i] = password.charAt(i);
+    }
+    for (; i < 16; i++) {
+      buffer[i] = password.charAt(23 - i);
+    }
+    for (; i < 32; i += 2) {
+      buffer[i] = password.charAt(46 - i);
+    }
+    for (i = 31; i >= 17; i -= 2) {
+      buffer[i] = password.charAt(i);
+    }
+
+    String s = new String(buffer);
+    String reversePassword = new String(buffer);
+
+    System.out.println("Password Reverse : picoCTF{" + reversePassword + "}");
+
+    return s.equals("jU5t_a_sna_3lpm13gc49_u_4_m0rf41");
+  }
+
+}
+```
+### Flag
+picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}
 - - -
 
 # vault-door-4
@@ -105,6 +217,7 @@ This vault uses ASCII encoding for the password. The source code for this vault 
 
 ### Hint
 >Use a search engine to find an "ASCII table".
+
 >You will also need to know the difference between octal, decimal, and hexademical numbers.
 
 ## Solution
@@ -127,6 +240,7 @@ In the last challenge, you mastered octal (base 8), decimal (base 10), and hexad
 
 ### Hint
 >You may find an encoder/decoder tool helpful, such as https://encoding.tools/
+
 >Read the wikipedia articles on URL encoding and base 64 encoding to understand how they work and what the results look like.
 
 ## Solution
@@ -160,6 +274,7 @@ This vault uses bit shifts to convert a password string into an array of integer
 
 ### Hint
 >Use a decimal/hexademical converter such as this one: https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html
+
 >You will also need to consult an ASCII table such as this one: https://www.asciitable.com/
 
 ## Solution
@@ -177,6 +292,7 @@ Apparently Dr. Evil's minions knew that our agency was making copies of their so
 
 ### Hint
 >Clean up the source code so that you can read it and understand what is going on.
+
 >Draw a diagram to illustrate which bits are being switched in the scramble() method, then figure out a sequence of bit switches to undo it. You should be able to reuse the switchBits() method as is.
 
 ## Solution
@@ -184,3 +300,16 @@ Apparently Dr. Evil's minions knew that our agency was making copies of their so
 ### Flag
 picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}
 
+# asm1
+Points: 200
+
+## Problem
+What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/bee4f468b435b1693aa13e0d6c616573/test.S) located in the directory at /problems/asm1_5_301df039c0ee4ee4dfa8adad6a40b875.
+
+### Hint
+>assembly [conditions](https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
+
+## Solution
+
+### Flag
+0x348
