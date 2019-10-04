@@ -89,17 +89,18 @@ Solution here
 Points: 150
 
 ## Problem
->We found this [packet capture](https://2019shell1.picoctf.com/static/1ed41b100ebf0354a2f3921312110721/capture.pcap). Recover the flag. You can also find the file in /problems/shark-on-wire-1_0_606ee6b0b78f6987c7b12f43253b2d9b.
+>We found this [packet capture](https://2019shell1.picoctf.com/static/ae9ca8cff43ed638ed5d137f9ece7455/capture.pcap). Recover the flag. You can also find the file in /problems/shark-on-wire-1_0_606ee6b0b78f6987c7b12f43253b2d9b.
 
 ### Hint
 >Try using a tool like Wireshark
 >What are streams?
 
 ## Solution
-Solution here
+
+Use this wireshark filter `udp.stream eq 6`
 
 ### Flag
-`Flag`
+`picoCTF{StaT31355_636f6e6e}`
 
 - - -
 

@@ -26,11 +26,12 @@ Written as part of learning experience
 
 | Challenges                                                     | Points | Status |
 |:---------------------------------------------------------------|:-------|:-------|
-| [Glory of the Garden](forensics#Glory-of-the-Garden)           | 50     | Unsolved |
-| [unzip](forensics#unzip)            							 | 50     | Unsolved |
-| [So Meta](forensics#so-meta)                          		 | 150    | Unsolved |
-| [What Lies Within](forensics#what-lies-within) 		         | 150    | Unsolved |
-| [extensions](forensics#extensions) 						     | 150    | Unsolved |
+| [Glory of the Garden](forensics#Glory-of-the-Garden)           | 50     | Solved |
+| [unzip](forensics#unzip)            							 | 50     | Solved |
+| [So Meta](forensics#so-meta)                          		 | 150    | Solved |
+| [What Lies Within](forensics#what-lies-within) 		         | 150    | Solved |
+| [extensions](forensics#extensions) 						     | 150    | Solved |
+| [shark on wire 1](forensics#shark-on-wire-1) 				     | 150    | Solved |
 
 ## General Skills [(link)](general-skills)
 
@@ -49,7 +50,7 @@ Written as part of learning experience
 | [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Solved |
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
 | [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Unsolved |
-| [where-is-the-file  ](general-skills#where-is-the-file )               | 200         | Solved |
+| [where-is-the-file](general-skills#where-is-the-file )               | 200         | Solved |
 
 ## Reversing [(link)](reversing)
 | Challenges                                  | Points     | Status |
@@ -87,6 +88,7 @@ Written as part of learning experience
 | [Client-side-again](web-exploitation#Client-side-again)              | 200    | Solved |
 | [Open-to-admins](web-exploitation#Open-to-admins)         			| 200    | Solved |
 | [picobrowser](web-exploitation#picobrowser)         					| 200    | Solved |
+| [Irish-Name-Repo](web-exploitation#Irish-Name-Repo)         			| 300    | Solved |
 | [Java Script Kiddie](web-exploitation#JavaScript-Kiddie)              | 400    | Unsolved |
 
 - - -
