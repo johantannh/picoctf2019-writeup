@@ -46,11 +46,11 @@ Written as part of learning experience
 | [Resources](general-skills#Resources)                 				 | 100         | Solved |
 | [strings it](general-skills#strings-it)                 				 | 100         | Solved |
 | [what's a net cat?](general-skills#whats-a-netcat?)                    | 100         | Solved |
-| [Based ](general-skills#based)                 					     | 200         | Unsolved |
+| [Based ](general-skills#based)                 					     | 200         | Solved |
 | [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Solved |
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
 | [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Unsolved |
-| [where-is-the-file](general-skills#where-is-the-file )               | 200         | Solved |
+| [where-is-the-file](general-skills#where-is-the-file )               	 | 200         | Solved |
 
 ## Reversing [(link)](reversing)
 | Challenges                                  | Points     | Status |

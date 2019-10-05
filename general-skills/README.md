@@ -168,16 +168,19 @@ Points: 100
 Points: 200
 
 ## Problem
->To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 25180.
+>To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with `nc 2019shell1.picoctf.com 25180`.
 
 ### Hint
 >I hear python can convert things. It might help to have multiple windows open
 
 ## Solution
-Solution here
+1. Connect to the server by using the following cmd `nc 2019shell1.picoctf.com 25180`
+2. Use a binary to word converter to get the 1st word
+3. Use a octal to word converter to get the 2nd word
+4. Use a hex to word converter to get the flag.
 
 ### Flag
-`Flag`
+`picoCTF{learning_about_converting_values_d57e7f86}`
 
 - - -
 
