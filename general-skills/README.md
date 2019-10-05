@@ -101,13 +101,13 @@ Decode 'bDNhcm5fdGgzX3IwcDM1' from Base64 format
 Points: 100
 
 ## Problem
->Can you find the [flag](https://2019shell1.picoctf.com/static/c603b946e99b2f55debd8e2c0ab79df6/file) in file? This would be really tedious to look through manually, something tells me there is a better way. You can also find the file in /problems/first-grep_3_879f8abffc003a927781554dba84b688 on the shell server.
+>Can you find the [flag](https://2019shell1.picoctf.com/static/c603b946e99b2f55debd8e2c0ab79df6/file) in file? This would be really tedious to look through manually, something tells me there is a better way. You can also find the file in /problems/first-grep_1_6788154ca7ee937f569985ff397203b6 on the shell server.
 
 ### Hint
 >grep [tutorial](https://ryanstutorials.net/linuxtutorial/grep.php)
 
 ## Solution
-To be done
+1. Run `grep "picoCTF" file` to get the flag.
 
 ### Flag
 `picoCTF{grep_is_good_to_find_things_205b65d7}`
