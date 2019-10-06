@@ -15,12 +15,12 @@ Written as part of learning experience
 
 ## Binary Exploitation [(link)](binary-exploitation)
 
-| Challenges                                 | Points     | Status |
-|:-------------------------------------------|:-----------|:-------|
-| [handy-shellcode](binary-exploitation#handy-shellcode)     | 50         | Unsolved |
-| [practice-run-1](binary-exploitation#practice-run-1)        | 100        | Solved |
-| [OverFlow 0](binary-exploitation#OverFlow-0)        | 100        | Solved |
-| [Ghost_Diary](binary-exploitation#Ghost_Diary)                 | 500        | Unsolved |
+| Challenges                                              | Points     | Status |
+|:--------------------------------------------------------|:-----------|:-------|
+| [handy-shellcode](binary-exploitation#handy-shellcode)  | 50         | Solved |
+| [practice-run-1](binary-exploitation#practice-run-1)    | 100        | Solved |
+| [OverFlow 0](binary-exploitation#OverFlow-0)            | 100        | Solved |
+| [Ghost_Diary](binary-exploitation#Ghost_Diary)          | 500        | Unsolved |
 
 ## Forensics [(link)](forensics)
 
@@ -70,22 +70,22 @@ Written as part of learning experience
 |:----------------------------------------------------------|:-----------|:---------|
 | [The Numbers ](cryptography#The-Numbers)       		 	 | 50        | Solved   |
 | [13](cryptography#13)          							 | 100        | Solved   |
-| [Easy1](cryptography#Easy1)         				   		  | 100        | Solved   |
+| [Easy1](cryptography#Easy1)         				   		 | 100        | Solved   |
 | [caesar](cryptography#caesar)         				     | 100        | Solved   |
 | [Flags](cryptography#Flags)           					 | 200        | Unsolved   |
-| [Mr-Worldwide](cryptography#Mr-Worldwide)           					 | 200        | Unsolved   |
-| [Tapping](cryptography#Tapping)           					 | 200        | Solved   |
-| [la-cifra-de](cryptography#la-cifra-de)           					 | 200        | Unsolved   |
-| [rsa-pop-quiz](cryptography#rsa-pop-quiz)           					 | 200        | Unsolved   |
+| [Mr-Worldwide](cryptography#Mr-Worldwide)           		 | 200        | Solved   |
+| [Tapping](cryptography#Tapping)           				 | 200        | Solved   |
+| [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Unsolved   |
+| [rsa-pop-quiz](cryptography#rsa-pop-quiz)           		 | 200        | Unsolved   |
 
 ## Web Exploitation [(link)](web-exploitation)
 | Challenges                                                            | Points | Status |
 |:----------------------------------------------------------------------|:-------|:-------|
-| [Insp3ct0r](web-exploitation#Insp3ct0r)                               | 50     | Solved   |
+| [Insp3ct0r](web-exploitation#Insp3ct0r)                               | 50     | Solved |
 | [dont-use-client-side](web-exploitation#dont-use-client-side)         | 100    | Solved |
 | [logon](web-exploitation#logon)                                       | 100    | Solved |
-| [where are the robots](web-exploitation#where-are-the-robots)         | 100    | Solved   |
-| [Client-side-again](web-exploitation#Client-side-again)              | 200    | Solved |
+| [where are the robots](web-exploitation#where-are-the-robots)         | 100    | Solved |
+| [Client-side-again](web-exploitation#Client-side-again)               | 200    | Solved |
 | [Open-to-admins](web-exploitation#Open-to-admins)         			| 200    | Solved |
 | [picobrowser](web-exploitation#picobrowser)         					| 200    | Solved |
 | [Irish-Name-Repo](web-exploitation#Irish-Name-Repo)         			| 300    | Solved |

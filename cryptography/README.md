@@ -102,10 +102,47 @@ Points: 200
 
 ## Solution
 
-Solution
+Arrange the coordinates. put each one into google map
+```
+picoCTF{
+(35.028309, 135.753082)
+(46.469391, 30.740883)
+(39.758949, -84.191605)
+(41.015137, 28.979530)
+(24.466667, 54.366669)
+(3.140853, 101.693207)
+_
+(9.005401, 38.763611)
+(-3.989038, -79.203560)
+(52.377956, 4.897070)
+(41.085651, -73.858467)
+(57.790001, -152.407227)
+(31.205753, 29.924526)
+}
+```
+
+Paste each coordinate in google map. Copy the address for each coordinate and notice the `city` for each coordinate. Take the first letter of each city and put together it forms the words.
+
+```
+picoCTF{
+2QH3+86 Kyoto, Japan
+FP9R+Q9 Odesa, Odessa Oblast, Ukraine
+QR55+H9 Dayton, Ohio, USA
+2X8H+3R Istanbul(Eminönü, Rüstem Paşa, Fatih/İstanbul, Turkey)
+F988+MM Abu Dhabi - United Arab Emirates
+4MRV+87 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia
+_
+2Q47+5C Addis Ababa, Ethiopia
+2Q6W+9H Loja, Ecuador
+9VHW+5R Amsterdam, Netherlands
+34PR+7J Sleepy Hollow, New York, USA
+QHRV+24 Kodiak, Alaska, USA
+6W4F+8R Alexandria, Egypt
+}
+```
 
 ### Flag
-`flag`
+`picoCTF{KODIAK_ALASKA}`
 
 - - - 
 
@@ -143,7 +180,6 @@ Points: 200
 
 ## Solution
 
-Solution
 
 ### Flag
 `Flag`
@@ -163,7 +199,34 @@ Points: 200
 
 ## Solution
 
-Solution
+1. [rsa-calculator](https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html)
+2. [toitient-calculator](http://www.kourbatov.com/math/calculators/eulertotientfunction.htm)
+
+1. `Y` 
+```
+p=60413
+q=76753
+n = p*q = 4636878989
+```
+2. `Y`
+```
+p = 54269
+n = p*q = 5051846941
+q = n/p = 93089
+```
+3. `N`
+```
+e = 3
+n = 5...
+I didnt bother to solve this
+```
+
+4. 
+```
+q = 66347
+p = 12611
+totient(n) = 836623060
+```
 
 ### Flag
 `Flag`

@@ -1,0 +1,19 @@
+FROM python:2.7-alpine3.10
+
+WORKDIR /usr/src/app
+
+RUN apk add --no-cache \
+    build-base \
+    openssl-dev \
+    libffi-dev \
+    freetype-dev \
+    capstone \
+    bash \
+    git
+
+#RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade git+https://github.com/Gallopsled/pwntools.git@dev3
+
+COPY exploit.py .
+
+CMD [ "python", "./exploit.py" ]
