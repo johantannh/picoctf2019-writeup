@@ -255,3 +255,39 @@ Points: 200
 ### Flag
 `picoCTF{w3ll_that_d1dnt_w0RK_30444bc6}`
 - - -
+
+# flag_shop 
+Points: 300
+
+## Problem
+>There's a flag shop selling stuff, can you buy a flag? [Source](flag_shop/store.c). Connect with nc 2019shell1.picoctf.com 29250.
+
+### Hint
+>Two's compliment can do some weird things when numbers get really big!
+
+## Solution
+Analyze the code given to find out what it does. Basically is a shop that allows you to buy flag. There is a flaw in the system when you buy a flag. 
+```c
+account_balance = account_balance - total_cost;
+```
+In twos complement system, the MSB is the negative bit. Therefore just make the total_cost large enough until it becomes negative so that it adds to your account balance.
+
+```
+2
+...
+1
+...
+These knockoff Flags cost 900 each, enter desired quantity
+2147468647
+
+The final cost is: -13500900
+
+Your current balance after transaction: 13502000
+```
+And based on the code found in 2., your account balance will be added and you will be rich enough to purchase the 1337 flag.
+
+
+### Flag
+`picoCTF{m0n3y_bag5_783740a8}`
+- - -
+
