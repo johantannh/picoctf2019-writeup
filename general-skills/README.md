@@ -101,13 +101,13 @@ Decode 'bDNhcm5fdGgzX3IwcDM1' from Base64 format
 Points: 100
 
 ## Problem
->Can you find the [flag](https://2019shell1.picoctf.com/static/c603b946e99b2f55debd8e2c0ab79df6/file) in file? This would be really tedious to look through manually, something tells me there is a better way. You can also find the file in /problems/first-grep_3_879f8abffc003a927781554dba84b688 on the shell server.
+>Can you find the [flag](https://2019shell1.picoctf.com/static/c603b946e99b2f55debd8e2c0ab79df6/file) in file? This would be really tedious to look through manually, something tells me there is a better way. You can also find the file in /problems/first-grep_1_6788154ca7ee937f569985ff397203b6 on the shell server.
 
 ### Hint
 >grep [tutorial](https://ryanstutorials.net/linuxtutorial/grep.php)
 
 ## Solution
-To be done
+1. Run `grep "picoCTF" file` to get the flag.
 
 ### Flag
 `picoCTF{grep_is_good_to_find_things_205b65d7}`
@@ -168,16 +168,19 @@ Points: 100
 Points: 200
 
 ## Problem
->To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 25180.
+>To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with `nc 2019shell1.picoctf.com 25180`.
 
 ### Hint
 >I hear python can convert things. It might help to have multiple windows open
 
 ## Solution
-Solution here
+1. Connect to the server by using the following cmd `nc 2019shell1.picoctf.com 25180`
+2. Use a binary to word converter to get the 1st word
+3. Use a octal to word converter to get the 2nd word
+4. Use a hex to word converter to get the flag.
 
 ### Flag
-`Flag`
+`picoCTF{learning_about_converting_values_d57e7f86}`
 
 - - -
 
