@@ -32,6 +32,7 @@ Written as part of learning experience
 | [What Lies Within](forensics#what-lies-within) 		         | 150    | Solved |
 | [extensions](forensics#extensions) 						     | 150    | Solved |
 | [shark on wire 1](forensics#shark-on-wire-1) 				     | 150    | Solved |
+| [like1000](forensics#like1000) 				     | 250    | Solved |
 
 ## General Skills [(link)](general-skills)
 
@@ -51,6 +52,7 @@ Written as part of learning experience
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
 | [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Unsolved |
 | [where-is-the-file](general-skills#where-is-the-file )               	 | 200         | Solved |
+| [flag_shop](general-skills#flag_shop )               	 | 300         | Solved |
 
 ## Reversing [(link)](reversing)
 | Challenges                                  | Points     | Status |
@@ -72,7 +74,7 @@ Written as part of learning experience
 | [13](cryptography#13)          							 | 100        | Solved   |
 | [Easy1](cryptography#Easy1)         				   		 | 100        | Solved   |
 | [caesar](cryptography#caesar)         				     | 100        | Solved   |
-| [Flags](cryptography#Flags)           					 | 200        | Unsolved   |
+| [Flags](cryptography#Flags)           					 | 200        | Solved   |
 | [Mr-Worldwide](cryptography#Mr-Worldwide)           		 | 200        | Solved   |
 | [Tapping](cryptography#Tapping)           				 | 200        | Solved   |
 | [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Unsolved   |

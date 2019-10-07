@@ -119,3 +119,39 @@ Solution here
 
 ### Flag
 `Flag`
+
+- - - 
+
+# like1000
+Points: 250
+
+## Problem
+>This [.tar file](https://2019shell1.picoctf.com/static/8694f84879d3b7c0dcf775930f4665fc/1000.tar) got tarred alot. Also available at /problems/like1000_0_369bbdba2af17750ddf10cc415672f1c.
+
+### Hint
+>Try and script this, it'll save you alot of time
+
+## Solution
+
+1. Inspect the hex value and notice that there are many tar files.
+2. Each tar file name decreases by 1 value
+
+Use a simple python script to untar the file from 1000 to 0
+
+The script done on python 3.6
+```python
+import tarfile
+
+for i in range(1000, 0, -1):
+  tf = tarfile.open(str(i)+".tar")
+  tf.extractall()
+```
+
+Inside there are
+1. filler.txt
+2. flag.png
+
+### Flag
+`picoCTF{l0t5_0f_TAR5}`
+
+- - -
