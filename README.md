@@ -91,6 +91,11 @@ Written as part of learning experience
 | [Open-to-admins](web-exploitation#Open-to-admins)         			| 200    | Solved |
 | [picobrowser](web-exploitation#picobrowser)         					| 200    | Solved |
 | [Irish-Name-Repo](web-exploitation#Irish-Name-Repo)         			| 300    | Solved |
+| [Irish-Name-Repo 2](web-exploitation#Irish-Name-Repo-2)         	    | 350    | Solved |
+| [Empire1](web-exploitation#Empire1)         	   						| 400    | Unsolved |
+| [Irish-Name-Repo 3](web-exploitation#Irish-Name-Repo-3)         	    | 400    | Unsolved |
+| [JaWT Scratchpad](web-exploitation#JaWT-Scratchpad)              	    | 400    | Unsolved |
 | [Java Script Kiddie](web-exploitation#JavaScript-Kiddie)              | 400    | Unsolved |
+| [cereal-hacker-1](web-exploitation#cereal-hacker-1)                   | 450    | Unsolved |
 
 - - -
