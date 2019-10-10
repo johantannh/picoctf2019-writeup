@@ -85,7 +85,7 @@ Solution here
 
 - - -
 
-# shark on wire 1
+# shark-on-wire-1
 Points: 150
 
 ## Problem
@@ -153,5 +153,24 @@ Inside there are
 
 ### Flag
 `picoCTF{l0t5_0f_TAR5}`
+
+- - -
+
+# shark-on-wire-2
+Points: 300
+
+## Problem
+>We found this [packet capture](https://2019shell1.picoctf.com/static/dcd259894e0efe9d6e91da2af47e6369/capture.pcap). Recover the flag that was pilfered from the network. You can also find the file in /problems/shark-on-wire-2_0_3e92bfbdb2f6d0e25b8d019453fdbf07.
+
+### Hint
+
+
+## Solution
+
+1. Use wireshark filter `udp.port == 22`. Notice it forms a unique value
+2. Use a script to extract all src port, strip the value and convert back to ascii
+
+### Flag
+`picoCTF{p1LLf3r3d_data_v1a_st3g0}`
 
 - - -
