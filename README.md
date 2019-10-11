@@ -34,6 +34,7 @@ Written as part of learning experience
 | [shark on wire 1](forensics#shark-on-wire-1) 				     | 150    | Solved |
 | [like1000](forensics#like1000) 				                 | 250    | Solved |
 | [shark on wire 2](forensics#shark-on-wire-2) 				     | 300    | Solved |
+| [WebNet0](forensics#WebNet0) 				                     | 350    | Solved |
 
 ## General Skills [(link)](general-skills)
 

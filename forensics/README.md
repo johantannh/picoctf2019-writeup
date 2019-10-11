@@ -174,3 +174,33 @@ Points: 300
 `picoCTF{p1LLf3r3d_data_v1a_st3g0}`
 
 - - -
+
+# WebNet0
+Points: 300
+
+## Problem
+>We found this [packet capture](WebNet0/capture.pcap) and [key](WebNet0/picopico.key). Recover the flag. You can also find the file in /problems/webnet0_0_363c0e92cf19b68e5b5c14efb37ed786.
+
+### Hint
+> Try using a tool like Wireshark
+
+> How can you decrypt the TLS stream?
+
+## Solution
+
+1. Use wireshark
+2. Edit > Preferences > Protocols > SSL
+3. RSA keys list > Edit 
+4. Fill in
+    1. ip - 128.238.140.23
+    2. port - 443
+    3. tcp
+    4. file - picopico.key
+5. The stream will be decrypted. Now just follow the TLSv1.2 stream.
+6. Pico-Flag header is the answer
+
+
+### Flag
+`picoCTF{nongshim.shrimp.crackers}`
+
+- - -
