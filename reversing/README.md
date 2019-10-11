@@ -256,6 +256,7 @@ public static boolean checkPassword(String password) {
 ```
 
 ### Flag
+picoCTF{jU5t_4_bUnCh_0f_bYt3s_3a724c8f92}
 
 - - -
 
@@ -278,7 +279,8 @@ import java.nio.charset.StandardCharsets;
 import java.io.UnsupportedEncodingException;
 
 class Main {
-  public static String expected = "JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVm"
+  public static String expected = 
+			"JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVm"
                         + "JTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2"
                         + "JTM0JTVmJTY0JTYxJTM4JTM4JTMyJTY0JTMwJTMx";
 
@@ -373,11 +375,82 @@ This vault uses an XOR encryption scheme. The source code for this vault is here
 ### Hint
 >If X ^ Y = Z, then Z ^ Y = X. Write a program that decrypts the flag based on this fact.
 
-## Solution
+## Solution [Here](https://repl.it/@x3sphiorx/vd6)
+```java
+class Main {
+  public static byte[] myBytes = { 
+    0x3b, 0x65, 0x21, 0x0a, 0x38, 0x00 , 0x36, 0x1d,
+    0x0a, 0x3d, 0x61, 0x27, 0x11, 0x66, 0x27, 0x0a,
+    0x21, 0x1d, 0x61, 0x3b, 0x0a , 0x2d, 0x65, 0x27,
+    0x0a, 0x66, 0x61, 0x6d, 0x61, 0x30, 0x37, 0x36,
+  };
+
+  public static void main(String[] args) {
+
+    String s = new String(myBytes);
+
+    System.out.println("Pre Reverse Password Converted From Bytes : " + s.replaceAll("[\\n\\r]", ""));
+
+    byte[] myPassBytes = new byte[32];
+
+    byte byte_operand = 0x55;
+
+    int i = 0;
+    for (byte b : myBytes) {
+      myPassBytes[i] = (byte) ((int) b ^ (int) byte_operand);
+      i++;
+    }
+
+    String userInput = "picoCTF{";
+     userInput += new String(myPassBytes).replaceAll("[\\n\\r]", "");
+     userInput +="}";
+
+    System.out.println("Reverse Password: " + userInput);
+
+    System.out.println("Enter vault password:" + userInput);
+
+    String input = userInput.substring("picoCTF{".length(), userInput.length() -
+    1);
+
+    if (checkPassword(input)) {
+    System.out.println("Access granted.");
+    } else {
+    System.out.println("Access denied!");
+    }
+  }
+
+  public static boolean checkPassword(String password) {
+    if (password.length() != 32) {
+      return false;
+    }
+    byte[] passBytes = password.getBytes();
+
+    /*
+     * Encryption part is within this loop, where every byte is XOR with the
+     * password to check if it match.
+     * 
+     * Since X ^ Y = Z, then Z ^ Y = X.
+     * 
+     */
+    for (int i = 0; i < 32; i++) {
+      if (((passBytes[i] ^ 0x55) - myBytes[i]) != 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+```
 
 ### Flag
 picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_3484ebc}
 
+```
+Pre Reverse Password Converted From Bytes : ;e!86=a'f'!a;-e'fama076
+Reverse Password: picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_3484ebc}
+Enter vault password:picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_3484ebc}
+Access granted.
+```
 - - -
 
 # vault-door-7
