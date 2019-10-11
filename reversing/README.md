@@ -152,7 +152,7 @@ https://2019shell1.picoctf.com/static/e3c91f3cd8fb4d926e10ec20ecf074b6/VaultDoor
 ### Hint
 >Make a table that contains each value of the loop variables and the corresponding buffer index that it writes to.
 
-## Solution
+## Solution [Here](https://repl.it/@x3sphiorx/vd3)
 
 
 ```java
@@ -207,6 +207,12 @@ class Main {
 ```
 ### Flag
 picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}
+
+```
+Enter vault password: picoCTF{jU5t_a_sna_3lpm13gc49_u_4_m0rf41}
+Password Reverse: picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}
+Access denied!
+```
 - - -
 
 # vault-door-4
@@ -220,16 +226,37 @@ This vault uses ASCII encoding for the password. The source code for this vault 
 
 >You will also need to know the difference between octal, decimal, and hexademical numbers.
 
-## Solution
+## Solution [Here](https://repl.it/@x3sphiorx/vd4)
+```java
+public static boolean checkPassword(String password) {
+    byte[] passBytes = password.getBytes();
+    byte[] myBytes = { 
+      106, 85, 53, 116, 95, 52, 95, 98, 
+      0x55, 0x6e, 0x43, 0x68, 0x5f, 0x30, 0x66, 0x5f, 
+      0142, 0131, 0164, 063, 0163, 0137, 063, 0141, 
+      '7', '2', '4', 'c', '8', 'f', '9', '2', 
+      };
+    /*
+    Password is within myBytes. Just convert them from decimal, 
+    hex, octal to ASCII. This will result in 
+    decimal :  106, 85, 53, 116, 95, 52, 95, 98 >> jU5t_4_b 
+    hex :  0x55, 0x6e, 0x43, 0x68, 0x5f, 0x30, 0x66, 0x5f >> UnCh_0f_ 
+    oct : 0142, 0131, 0164, 063, 0163, 0137, 063, 0141 >> bYt3s_3a (convert decimal then hex)
+    ASCII : '7', '2', '4', 'c', '8', 'f', '9', '2' >> 724c8f92 
+    Combine : jU5t_4_bUnCh_0f_bYt3s_3a724c8f92
+    https://www.rapidtables.com/convert/number/ascii-hex-bin-dec-converter.html
+    */
+    for (int i = 0; i < 32; i++) {
+      if (passBytes[i] != myBytes[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+```
 
 ### Flag
-```
-decimal : jU5t_4_b 
-hex : UnCh_0f_ 
-oct : (convert decimal then hex) bYt3s_3a
-char : 724c8f92 
-picoCTF{jU5t_4_bUnCh_0f_bYt3s_3a724c8f92}
-```
+
 - - -
 
 # vault-door-5
@@ -243,11 +270,98 @@ In the last challenge, you mastered octal (base 8), decimal (base 10), and hexad
 
 >Read the wikipedia articles on URL encoding and base 64 encoding to understand how they work and what the results look like.
 
-## Solution
+## Solution [Here](https://repl.it/@x3sphiorx/vd5)
+```java
+import java.net.URLDecoder;
+import java.util.*;
+import java.nio.charset.StandardCharsets;
+import java.io.UnsupportedEncodingException;
 
+class Main {
+  public static String expected = "JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVm"
+                        + "JTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2"
+                        + "JTM0JTVmJTY0JTYxJTM4JTM4JTMyJTY0JTMwJTMx";
+
+  public static void main(String[] args) {
+
+    //Encode from URL > Base 64
+    //Decode from Base 64 > URL
+    System.out.println("Expected : " + expected);
+    
+    String b64d = base64Decode(expected);
+    System.out.println("Expected URL : " + b64d.toString());
+    
+    String urlDecoded = urlDecode(b64d);
+    System.out.println("Expected password : " + urlDecoded);
+
+
+    String userInput = "picoCTF{" + urlDecoded + "}";
+    System.out.println("Enter vault password: " + userInput);
+
+    String input = userInput.substring("picoCTF{".length(), userInput.length() - 1);
+
+    if (checkPassword(input)) {
+      System.out.println("Access granted.");
+    } else {
+      System.out.println("Access denied!");
+    }
+  }
+
+  // Minion #7781 used base 8 and base 16, but this is base 64, which is
+  // like... eight times stronger, right? Riiigghtt? Well that's what my twin
+  // brother Minion #2415 says, anyway.
+  //
+  // -Minion #2414
+  public static String base64Encode(byte[] input) {
+    return Base64.getEncoder().encodeToString(input);
+  }
+
+  public static String base64Decode(String input) {
+    byte[] bytes = Base64.getDecoder().decode(input);
+    String s = new String(bytes);
+    return s;
+  }
+
+  // URL encoding is meant for web pages, so any double agent spies who steal
+  // our source code will think this is a web site or something, defintely not
+  // vault door! Oh wait, should I have not said that in a source code
+  // comment?
+  //
+  // -Minion #2415
+  public static String urlEncode(byte[] input) {
+    StringBuffer buf = new StringBuffer();
+    for (int i = 0; i < input.length; i++) {
+      buf.append(String.format("%%%2x", input[i]));
+    }
+    return buf.toString();
+  }
+
+    public static String urlDecode(String urlString) {
+    try {
+            return URLDecoder.decode(urlString, StandardCharsets.UTF_8.toString());
+        } catch (UnsupportedEncodingException ex) {
+            throw new RuntimeException(ex.getCause());
+        }
+  }
+
+  public static boolean checkPassword(String password) {
+    String urlEncoded = urlEncode(password.getBytes());
+    String base64Encoded = base64Encode(urlEncoded.getBytes());
+
+    return base64Encoded.equals(expected);
+  }
+}
+```
 ### Flag
 picoCTF{c0nv3rt1ng_fr0m_ba5e_64_da882d01}
 
+```
+Expected : JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVmJTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2JTM0JTVmJTY0JTYxJTM4JTM4JTMyJTY0JTMwJTMx
+Expected URL : %63%30%6e%76%33%72%74%31%6e%67%5f%66%72%30%6d%5f%62%61%35%65%5f%36%34%5f%64%61%38%38%32%64%30%31
+Expected password : c0nv3rt1ng_fr0m_ba5e_64_da882d01
+Enter vault password: picoCTF{c0nv3rt1ng_fr0m_ba5e_64_da882d01}
+Access granted.
+```
 - - -
 
 # vault-door-6
@@ -300,6 +414,8 @@ Apparently Dr. Evil's minions knew that our agency was making copies of their so
 ### Flag
 picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}
 
+- - -
+
 # asm1
 Points: 200
 
@@ -313,3 +429,49 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 
 ### Flag
 0x348
+
+- - -
+
+# asm2
+Points: 250
+
+## Problem
+What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/f4eabe889f4e1c2ddb0232e87eb5e785/test.S) located in the directory at /problems/asm2_3_edb10ce41667cb1cd4213657dae580fd.
+
+### Hint
+>assembly [conditions](https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
+
+## Solution
+
+### Flag
+
+- - -
+
+# asm3
+Points: 300
+
+## Problem
+What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/0f75abb569e8a11ee4b1975d111676fb/test.S) located in the directory at /problems/asm3_1_b71abaa5cc92e3f7061f23957206b434.
+
+### Hint
+>more(?) [registers](https://wiki.skullsecurity.org/index.php?title=Registers)
+
+## Solution
+
+### Flag
+
+- - -
+
+# asm4
+Points: 300
+
+## Problem
+What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/2ebdf4385b3c4d69aef0240d6140c84b/test.S) located in the directory at /problems/asm4_2_0932017a5f5efe2bc813afd0fe0603aa.
+
+### Hint
+>Treat the Array argument as a pointer
+
+## Solution
+
+### Flag
+
