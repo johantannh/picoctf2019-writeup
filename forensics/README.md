@@ -104,21 +104,23 @@ Use this wireshark filter `udp.stream eq 6`
 
 - - -
 
-# Based
+# WhitePages
 Points: 200
 
 ## Problem
->To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 62267.
+>I stopped using YellowPages and moved onto WhitePages... but [the page they gave me](https://2019shell1.picoctf.com/static/6e6a95fce4c36be16c4c2eec55fdb8ab/whitepages.txt) is all blank!
 
 ### Hint
->I hear python can convert things.
->It might help to have multiple windows open
+
 
 ## Solution
-Solution here
+1. Use a text editor such as Notepad++ to open the given file
+2. Replace the unknown characters with 0
+3. Replace the whitespaces with 1
+4. Use an online binary to text decoder to decode the resulting binary string to get the flag.
 
 ### Flag
-`Flag`
+`picoCTF{not_all_spaces_are_created_equal_3bf40b869ee984866e67f3057f006a92}`
 
 - - - 
 

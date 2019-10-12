@@ -32,6 +32,7 @@ Written as part of learning experience
 | [What Lies Within](forensics#what-lies-within) 		         | 150    | Solved |
 | [extensions](forensics#extensions) 						     | 150    | Solved |
 | [shark on wire 1](forensics#shark-on-wire-1) 				     | 150    | Solved |
+| [WhitePages](forensics#WhitePages) 				     		 | 250    | Solved |
 | [like1000](forensics#like1000) 				                 | 250    | Solved |
 | [shark on wire 2](forensics#shark-on-wire-2) 				     | 300    | Solved |
 | [WebNet0](forensics#WebNet0) 				                     | 350    | Solved |
