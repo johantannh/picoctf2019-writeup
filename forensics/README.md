@@ -124,6 +124,24 @@ Points: 200
 
 - - - 
 
+
+# c0rrupt
+Points: 250
+
+## Problem
+>We found this file. Recover the flag. You can also find the file in /problems/c0rrupt_0_1fcad1344c25a122a00721e4af86de13.
+
+### Hint
+>Try fixing the file header
+
+## Solution
+
+
+### Flag
+`Flag`
+
+- - - 
+
 # like1000
 Points: 250
 
@@ -158,6 +176,25 @@ Inside there are
 
 - - -
 
+# m00nwalk
+Points: 250
+
+## Problem
+>Decode this message from the moon. You can also find the file in /problems/m00nwalk_1_727ca48dac5da21d2c11635238649314.
+
+### Hint
+>How did pictures from the moon landing get sent back to Earth?
+>What is the CMU mascot?, that might help select a RX option
+
+## Solution
+
+
+### Flag
+`Flag`
+
+- - -
+
+
 # shark-on-wire-2
 Points: 300
 
@@ -178,7 +215,7 @@ Points: 300
 - - -
 
 # WebNet0
-Points: 300
+Points: 350
 
 ## Problem
 >We found this [packet capture](WebNet0/capture.pcap) and [key](WebNet0/picopico.key). Recover the flag. You can also find the file in /problems/webnet0_0_363c0e92cf19b68e5b5c14efb37ed786.
@@ -204,5 +241,25 @@ Points: 300
 
 ### Flag
 `picoCTF{nongshim.shrimp.crackers}`
+
+- - -
+
+# WebNet1
+Points: 450
+
+## Problem
+>We found this [packet capture](https://2019shell1.picoctf.com/static/62437b61d31d915b837cce3396c204d9/capture.pcap) and [key](https://2019shell1.picoctf.com/static/62437b61d31d915b837cce3396c204d9/picopico.key). Recover the flag. You can also find the file in /problems/webnet1_0_d63b267c607b8fedbae100068e010422.
+
+### Hint
+> Try using a tool like Wireshark
+
+> How can you decrypt the TLS stream?
+
+## Solution
+
+
+
+### Flag
+`Flag`
 
 - - -
