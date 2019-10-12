@@ -20,6 +20,8 @@ Written as part of learning experience
 | [handy-shellcode](binary-exploitation#handy-shellcode)  | 50         | Solved |
 | [practice-run-1](binary-exploitation#practice-run-1)    | 100        | Solved |
 | [OverFlow 0](binary-exploitation#OverFlow-0)            | 100        | Solved |
+| [OverFlow 1](binary-exploitation#OverFlow-1)            | 150        | Unsolved |
+| [slippery-shellcode](binary-exploitation#slippery-shellcode)   | 200        | Unsolved |
 | [Ghost_Diary](binary-exploitation#Ghost_Diary)          | 500        | Unsolved |
 
 ## Forensics [(link)](forensics)
@@ -34,7 +36,7 @@ Written as part of learning experience
 | [shark on wire 1](forensics#shark-on-wire-1) 				     | 150    | Solved |
 | [WhitePages](forensics#WhitePages) 				     		 | 250    | Solved |
 | [like1000](forensics#like1000) 				                 | 250    | Solved |
-| [c0rrupt](forensics#c0rrupt) 				    				 | 250    | Solved |
+| [c0rrupt](forensics#c0rrupt) 				    				 | 250    | Pending writeup  |
 | [m00nwalk](forensics#m00nwalk) 				    			 | 250    | Unsolved |
 | [shark on wire 2](forensics#shark-on-wire-2) 				     | 300    | Solved |
 | [WebNet0](forensics#WebNet0) 				                     | 350    | Solved |
@@ -56,7 +58,7 @@ Written as part of learning experience
 | [Based ](general-skills#based)                 					     | 200         | Solved |
 | [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Solved |
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
-| [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Unsolved |
+| [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Pending writeup |
 | [where-is-the-file](general-skills#where-is-the-file )               	 | 200         | Solved |
 | [flag_shop](general-skills#flag_shop )               	                 | 300         | Solved |
 
