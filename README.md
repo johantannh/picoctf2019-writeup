@@ -85,7 +85,7 @@ Written as part of learning experience
 | [Flags](cryptography#Flags)           					 | 200        | Solved   |
 | [Mr-Worldwide](cryptography#Mr-Worldwide)           		 | 200        | Solved   |
 | [Tapping](cryptography#Tapping)           				 | 200        | Solved   |
-| [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Unsolved   |
+| [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Pending writeup   |
 | [rsa-pop-quiz](cryptography#rsa-pop-quiz)           		 | 200        | Unsolved   |
 
 ## Web Exploitation [(link)](web-exploitation)
