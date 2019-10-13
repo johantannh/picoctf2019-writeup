@@ -61,6 +61,7 @@ Written as part of learning experience
 | [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Pending writeup |
 | [where-is-the-file](general-skills#where-is-the-file )               	 | 200         | Solved |
 | [flag_shop](general-skills#flag_shop )               	                 | 300         | Solved |
+| [mus1c](general-skills#mus1c )               	               		     | 300         | Solved |
 
 ## Reversing [(link)](reversing)
 | Challenges                                  | Points     | Status |

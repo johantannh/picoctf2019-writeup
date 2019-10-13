@@ -291,3 +291,22 @@ And based on the code found in 2., your account balance will be added and you wi
 `picoCTF{m0n3y_bag5_783740a8}`
 - - -
 
+
+# mus1c   
+Points: 300
+
+## Problem
+>I wrote you a [song](https://2019shell1.picoctf.com/static/40f27dcc8a1fe070ee7cfc03140920aa/lyrics.txt) Put it in the picoCTF{} flag format
+
+### Hint
+>Do you think you can master rockstar?
+
+## Solution
+1. Go to https://codewithrockstar.com/
+2. Go to try it tab and paste what is in the text file onto the page.
+3. Click on "rock" and copy the output to an online ascii to text converter to get the flag.
+
+
+### Flag
+`picoCTF{rrrocknrn0113r}`
+- - -
