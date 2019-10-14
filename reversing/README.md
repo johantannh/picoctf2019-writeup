@@ -2,7 +2,7 @@
 Points: 50
 
 ## Problem
->Your mission is to enter Dr. Evil's laboratory and retrieve the blueprints for his Doomsday Project. The laboratory is protected by a series of locked vault doors. Each door is controlled by a computer and requires a password to open. Unfortunately, our undercover agents have not been able to obtain the secret passwords for the vault doors, but one of our junior agents obtained the source code for each vault's computer! You will need to read the source code for each level to figure out what the password is for that vault door. As a warmup, we have created a replica vault in our training facility. The source code for the training vault is here: [VaultDoorTraining.java](https://2019shell1.picoctf.com/static/b0a612187f91d39a982c08b5b1703f20/VaultDoorTraining.java)
+>Your mission is to enter Dr. Evil's laboratory and retrieve the blueprints for his Doomsday Project. The laboratory is protected by a series of locked vault doors. Each door is controlled by a computer and requires a password to open. Unfortunately, our undercover agents have not been able to obtain the secret passwords for the vault doors, but one of our junior agents obtained the source code for each vault's computer! You will need to read the source code for each level to figure out what the password is for that vault door. As a warmup, we have created a replica vault in our training facility. The source code for the training vault is here: [VaultDoorTraining.java](VaultDoorTraining.java)
 
 ### Hint
 >The password is revealed in the program's source code.
@@ -25,7 +25,7 @@ public boolean checkPassword(String password) {
 Points: 100
 
 ## Problem
->This vault uses some complicated arrays! I hope you can make sense of it, special agent. The source code for this vault is here: [VaultDoor1.java](https://2019shell1.picoctf.com/static/e34a3f6d6e6341be2f9f562f1b4e7c33/VaultDoor1.java)
+>This vault uses some complicated arrays! I hope you can make sense of it, special agent. The source code for this vault is here: [VaultDoor1.java](VaultDoor1.java)
 
 ### Hint
 >Look up the charAt() method online.
@@ -147,8 +147,7 @@ class Main {
 Points: 200
 
 ## Problem
-This vault uses for-loops and byte arrays. The source code for this vault is here: [VaultDoor3.java](
-https://2019shell1.picoctf.com/static/e3c91f3cd8fb4d926e10ec20ecf074b6/VaultDoor3.java)
+This vault uses for-loops and byte arrays. The source code for this vault is here: [VaultDoor3.java](VaultDoor3.java)
 
 ### Hint
 >Make a table that contains each value of the loop variables and the corresponding buffer index that it writes to.
@@ -219,7 +218,7 @@ Access denied!
 Points: 250
 
 ## Problem
-This vault uses ASCII encoding for the password. The source code for this vault is here: [VaultDoor4.java](https://2019shell1.picoctf.com/static/069d0ac8cb5ef3a4380155b2902d931c/VaultDoor4.java)
+This vault uses ASCII encoding for the password. The source code for this vault is here: [VaultDoor4.java](VaultDoor4.java)
 
 ### Hint
 >Use a search engine to find an "ASCII table".
@@ -264,7 +263,7 @@ public static boolean checkPassword(String password) {
 Points: 300
 
 ## Problem
-In the last challenge, you mastered octal (base 8), decimal (base 10), and hexadecimal (base 16) numbers, but this vault door uses a different change of base as well as URL encoding! The source code for this vault is here: [VaultDoor5.java](https://2019shell1.picoctf.com/static/973481b7e1f7abc490c49061c415722d/VaultDoor5.java)
+In the last challenge, you mastered octal (base 8), decimal (base 10), and hexadecimal (base 16) numbers, but this vault door uses a different change of base as well as URL encoding! The source code for this vault is here: [VaultDoor5.java](VaultDoor5.java)
 
 ### Hint
 >You may find an encoder/decoder tool helpful, such as https://encoding.tools/
@@ -370,7 +369,7 @@ Access granted.
 Points: 350
 
 ## Problem
-This vault uses an XOR encryption scheme. The source code for this vault is here: [VaultDoor6.java](https://2019shell1.picoctf.com/static/85cf337e69ef98ce5fde6972bf58c5bf/VaultDoor6.java)
+This vault uses an XOR encryption scheme. The source code for this vault is here: [VaultDoor6.java](VaultDoor6.java)
 
 ### Hint
 >If X ^ Y = Z, then Z ^ Y = X. Write a program that decrypts the flag based on this fact.
@@ -457,7 +456,7 @@ Access granted.
 Points: 400
 
 ## Problem
-This vault uses bit shifts to convert a password string into an array of integers. Hurry, agent, we are running out of time to stop Dr. Evil's nefarious plans! The source code for this vault is here: [VaultDoor7.java](https://2019shell1.picoctf.com/static/65415dd6da943c05146d9b8279d6ccc6/VaultDoor7.java)
+This vault uses bit shifts to convert a password string into an array of integers. Hurry, agent, we are running out of time to stop Dr. Evil's nefarious plans! The source code for this vault is here: [VaultDoor7.java](VaultDoor7.java)
 
 ### Hint
 >Use a decimal/hexademical converter such as this one: https://www.mathsisfun.com/binary-decimal-hexadecimal-converter.html
@@ -589,7 +588,7 @@ Access granted.
 Points: 450
 
 ## Problem
-Apparently Dr. Evil's minions knew that our agency was making copies of their source code, because they intentionally sabotaged this source code in order to make it harder for our agents to analyze and crack into! The result is a quite mess, but I trust that my best special agent will find a way to solve it. The source code for this vault is here: [VaultDoor8.java](https://2019shell1.picoctf.com/static/4fb5848a676119dbc837ca447cdfb556/VaultDoor8.java)
+Apparently Dr. Evil's minions knew that our agency was making copies of their source code, because they intentionally sabotaged this source code in order to make it harder for our agents to analyze and crack into! The result is a quite mess, but I trust that my best special agent will find a way to solve it. The source code for this vault is here: [VaultDoor8.java](VaultDoor8.java)
 
 ### Hint
 >Clean up the source code so that you can read it and understand what is going on.
