@@ -80,6 +80,7 @@ To retrieve the password,
 - Method 2 : Use notepad++ with line operation to re-arrange the lines according to the index number to retreive the flag for this problem. 
 
 ##### Run Code Via IDE [Method 1](https://repl.it/@x3sphiorx/vd1)
+
 ```java
 class Main {
   public static void main(String[] args) {
@@ -154,7 +155,6 @@ https://2019shell1.picoctf.com/static/e3c91f3cd8fb4d926e10ec20ecf074b6/VaultDoor
 
 ## Solution [Here](https://repl.it/@x3sphiorx/vd3)
 
-
 ```java
 import java.util.Scanner;
 
@@ -206,7 +206,7 @@ class Main {
 }
 ```
 ### Flag
-picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}
+`picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}`
 
 ```
 Enter vault password: picoCTF{jU5t_a_sna_3lpm13gc49_u_4_m0rf41}
@@ -256,7 +256,7 @@ public static boolean checkPassword(String password) {
 ```
 
 ### Flag
-picoCTF{jU5t_4_bUnCh_0f_bYt3s_3a724c8f92}
+`picoCTF{jU5t_4_bUnCh_0f_bYt3s_3a724c8f92}`
 
 - - -
 
@@ -355,7 +355,7 @@ class Main {
 }
 ```
 ### Flag
-picoCTF{c0nv3rt1ng_fr0m_ba5e_64_da882d01}
+`picoCTF{c0nv3rt1ng_fr0m_ba5e_64_da882d01}`
 
 ```
 Expected : JTYzJTMwJTZlJTc2JTMzJTcyJTc0JTMxJTZlJTY3JTVmJTY2JTcyJTMwJTZkJTVmJTYyJTYxJTM1JTY1JTVmJTM2JTM0JTVmJTY0JTYxJTM4JTM4JTMyJTY0JTMwJTMx
@@ -443,7 +443,7 @@ class Main {
 ```
 
 ### Flag
-picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_3484ebc}
+`picoCTF{n0t_mUcH_h4rD3r_tH4n_x0r_3484ebc}`
 
 ```
 Pre Reverse Password Converted From Bytes : ;e!86=a'f'!a;-e'fama076
@@ -464,11 +464,125 @@ This vault uses bit shifts to convert a password string into an array of integer
 
 >You will also need to consult an ASCII table such as this one: https://www.asciitable.com/
 
-## Solution
+
+```java
+import java.util.*;
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.*;
+
+class Main {
+  public static void main(String args[]) {
+
+    String userInput = "picoCTF{";
+    userInput += breakPassword();
+    userInput += "}";
+
+    System.out.println("Reverse Password: " + userInput);
+
+    System.out.println("Enter vault password: " + userInput);
+    String input = userInput.substring("picoCTF{".length(), userInput.length() - 1);
+
+    if (checkPassword(input)) {
+      System.out.println("Access granted.");
+    } else {
+      System.out.println("Access denied!");
+    }
+  }
+
+  // Each character can be represented as a byte value using its
+  // ASCII encoding. Each byte contains 8 bits, and an int contains
+  // 32 bits, so we can "pack" 4 bytes into a single int. Here's an
+  // example: if the hex string is "01ab", then those can be
+  // represented as the bytes {0x30, 0x31, 0x61, 0x62}. When those
+  // bytes are represented as binary, they are:
+  //
+  // 0x30: 00110000
+  // 0x31: 00110001
+  // 0x61: 01100001
+  // 0x62: 01100010
+  //
+  // If we put those 4 binary numbers end to end, we end up with 32
+  // bits that can be interpreted as an int.
+  //
+  // 00110000001100010110000101100010 -> 808542562
+  //
+  // Since 4 chars can be represented as 1 int, the 32 character password can
+  // be represented as an array of 8 ints.
+  //
+  // - Minion #7816
+  public static int[] passwordToIntArray(String hex) {
+    int[] x = new int[8];
+    byte[] hexBytes = hex.getBytes();
+    for (int i = 0; i < 8; i++) {
+      x[i] = hexBytes[i * 4] << 24 | hexBytes[i * 4 + 1] << 16 | hexBytes[i * 4 + 2] << 8 | hexBytes[i * 4 + 3];
+    }
+    return x;
+  }
+
+  public static boolean checkPassword(String password) {
+    if (password.length() != 32) {
+      return false;
+    }
+    int[] x = passwordToIntArray(password);
+    return x[0] == 1096770097 // 0x415F6231 = 01000001 01011111 01100010 00110001
+        && x[1] == 1952395366 // 0x745F3066 = 01110100 01011111 00110000 01100110
+        && x[2] == 1600270708 // 0x5F623174 = 01011111 01100010 00110001 01110100
+        && x[3] == 1601398833 // 0x5F736831 = 01011111 01110011 01101000 00110001
+        && x[4] == 1716808014 // 0x6654694E = 01100110 01010100 01101001 01001110
+        && x[5] == 1734293815 // 0x675F3937 = 01100111 01011111 00111001 00110111
+        && x[6] == 1667379558 // 0x63623166 = 01100011 01100010 00110001 01100110
+        && x[7] == 859191138; // 0x33363762 = 00110011 00110110 00110111 01100010
+  }
+
+  //Reverse the password by first converting the int > hex > ASCII
+  //Append the bits of the password by using string builder 
+  public static String breakPassword() {
+
+    int[] x = new int[8];
+
+    x[0] = 1096770097;
+    x[1] = 1952395366;
+    x[2] = 1600270708;
+    x[3] = 1601398833;
+    x[4] = 1716808014;
+    x[5] = 1734293815;
+    x[6] = 1667379558;
+    x[7] = 859191138;
+
+    StringBuilder cOutput = new StringBuilder("");
+
+    for (int temp : x) {
+      String decrypted = hexToAscii(Integer.toHexString(temp));
+      cOutput.append(decrypted);
+    }
+
+    return cOutput.toString();
+  }
+
+  private static String hexToAscii(String hexStr) {
+    StringBuilder output = new StringBuilder("");
+
+    for (int i = 0; i < hexStr.length(); i += 2) {
+      String str = hexStr.substring(i, i + 2);
+      output.append((char) Integer.parseInt(str, 16));
+    }
+
+    return output.toString();
+  }
+
+}
+```
+
 
 ### Flag
-picoCTF{A_b1t_0f_b1t_sh1fTiNg_97cb1f367b}
+`picoCTF{A_b1t_0f_b1t_sh1fTiNg_97cb1f367b}`
 
+```
+Reverse Password: picoCTF{A_b1t_0f_b1t_sh1fTiNg_97cb1f367b}
+Enter vault password: picoCTF{A_b1t_0f_b1t_sh1fTiNg_97cb1f367b}
+Access granted.
+```
 - - -
 
 # vault-door-8
@@ -482,10 +596,242 @@ Apparently Dr. Evil's minions knew that our agency was making copies of their so
 
 >Draw a diagram to illustrate which bits are being switched in the scramble() method, then figure out a sequence of bit switches to undo it. You should be able to reuse the switchBits() method as is.
 
-## Solution
+## Solution [Here](https://repl.it/@x3sphiorx/vd8)
+
+### Code In Obfuscated Form.
+```java
+// These pesky special agents keep reverse engineering our source code and then
+// breaking into our secret vaults. THIS will teach those sneaky sneaks a
+// lesson.
+//
+// -Minion #0891
+import java.util.*; import javax.crypto.Cipher; import javax.crypto.spec.SecretKeySpec;
+import java.security.*; class VaultDoor8 {public static void main(String args[]) {
+Scanner b = new Scanner(System.in); System.out.print("Enter vault password: ");
+String c = b.next(); String f = c.substring(8,c.length()-1); VaultDoor8 a = new VaultDoor8(); if (a.checkPassword(f)) {System.out.println("Access granted."); }
+else {System.out.println("Access denied!"); } } public char[] scramble(String password) {/* Scramble a password by transposing pairs of bits. */
+char[] a = password.toCharArray(); for (int b=0; b<a.length; b++) {char c = a[b]; c = switchBits(c,1,2); c = switchBits(c,0,3); /* c = switchBits(c,14,3); c = switchBits(c, 2, 0); */ c = switchBits(c,5,6); c = switchBits(c,4,7);
+c = switchBits(c,0,1); /* d = switchBits(d, 4, 5); e = switchBits(e, 5, 6); */ c = switchBits(c,3,4); c = switchBits(c,2,5); c = switchBits(c,6,7); a[b] = c; } return a;
+} public char switchBits(char c, int p1, int p2) {/* Move the bit in position p1 to position p2, and move the bit
+that was in position p2 to position p1. Precondition: p1 < p2 */ char mask1 = (char)(1 << p1);
+char mask2 = (char)(1 << p2); /* char mask3 = (char)(1<<p1<<p2); mask1++; mask1--; */ char bit1 = (char)(c & mask1); char bit2 = (char)(c & mask2); /* System.out.println("bit1 " + Integer.toBinaryString(bit1));
+System.out.println("bit2 " + Integer.toBinaryString(bit2)); */ char rest = (char)(c & ~(mask1 | mask2)); char shift = (char)(p2 - p1); char result = (char)((bit1<<shift) | (bit2>>shift) | rest); return result;
+} public boolean checkPassword(String password) {char[] scrambled = scramble(password); char[] expected = {
+0xF4, 0xC0, 0x97, 0xF0, 0x77, 0x97, 0xC0, 0xE4, 0xF0, 0x77, 0xA4, 0xD0, 0xC5, 0x77, 0xF4, 0x86, 0xD0, 0xA5, 0x45, 0x96, 0x27, 0xB5, 0x77, 0xE1, 0xC0, 0xA4, 0x95, 0x94, 0xD1, 0x95, 0x94, 0xD0 }; return Arrays.equals(scrambled, expected); } }
+```
+
+### Code After Beautify 
+
+```java
+// These pesky special agents keep reverse engineering our source code and then
+// breaking into our secret vaults. THIS will teach those sneaky sneaks a
+// lesson.
+//
+// -Minion #0891
+import java.util.*;
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.*;
+class VaultDoor8 {
+ public static void main(String args[]) {
+  Scanner b = new Scanner(System.in);
+  System.out.print("Enter vault password: ");
+  String c = b.next();
+  String f = c.substring(8, c.length() - 1);
+  VaultDoor8 a = new VaultDoor8();
+  if (a.checkPassword(f)) {
+   System.out.println("Access granted.");
+  } else {
+   System.out.println("Access denied!");
+  }
+ }
+ public char[] scramble(String password) {
+  /* Scramble a password by transposing pairs of bits. */
+  char[] a = password.toCharArray();
+  for (int b = 0; b < a.length; b++) {
+   char c = a[b];
+   c = switchBits(c, 1, 2);
+   c = switchBits(c, 0, 3); /* c = switchBits(c,14,3); c = switchBits(c, 2, 0); */
+   c = switchBits(c, 5, 6);
+   c = switchBits(c, 4, 7);
+   c = switchBits(c, 0, 1); /* d = switchBits(d, 4, 5); e = switchBits(e, 5, 6); */
+   c = switchBits(c, 3, 4);
+   c = switchBits(c, 2, 5);
+   c = switchBits(c, 6, 7);
+   a[b] = c;
+  }
+  return a;
+ }
+ public char switchBits(char c, int p1, int p2) {
+  /* Move the bit in position p1 to position p2, and move the bit
+  that was in position p2 to position p1. Precondition: p1 < p2 */
+  char mask1 = (char)(1 << p1);
+  char mask2 = (char)(1 << p2); /* char mask3 = (char)(1<<p1<<p2); mask1++; mask1--; */
+  char bit1 = (char)(c & mask1);
+  char bit2 = (char)(c & mask2);
+  /* System.out.println("bit1 " + Integer.toBinaryString(bit1));
+System.out.println("bit2 " + Integer.toBinaryString(bit2)); */
+  char rest = (char)(c & ~(mask1 | mask2));
+  char shift = (char)(p2 - p1);
+  char result = (char)((bit1 << shift) | (bit2 >> shift) | rest);
+  return result;
+ }
+ public boolean checkPassword(String password) {
+  char[] scrambled = scramble(password);
+  char[] expected = {
+   0xF4,
+   0xC0,
+   0x97,
+   0xF0,
+   0x77,
+   0x97,
+   0xC0,
+   0xE4,
+   0xF0,
+   0x77,
+   0xA4,
+   0xD0,
+   0xC5,
+   0x77,
+   0xF4,
+   0x86,
+   0xD0,
+   0xA5,
+   0x45,
+   0x96,
+   0x27,
+   0xB5,
+   0x77,
+   0xE1,
+   0xC0,
+   0xA4,
+   0x95,
+   0x94,
+   0xD1,
+   0x95,
+   0x94,
+   0xD0
+  };
+  return Arrays.equals(scrambled, expected);
+ }
+}
+```
+
+
+### After reversing the order of Scramble Method 
+
+```java
+
+// These pesky special agents keep reverse engineering our source code and then
+// breaking into our secret vaults. THIS will teach those sneaky sneaks a
+// lesson.
+//
+// -Minion #0891
+import java.util.*;
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.*;
+
+class Main {
+  public static void main(String[] args) {
+
+    String userInput = "picoCTF{";
+    userInput += String.valueOf(unScramble());
+    userInput += "}";
+
+    System.out.println("Reverse Password: " + userInput);
+
+    System.out.println("Enter vault password: " + userInput);
+    String input = userInput.substring("picoCTF{".length(), userInput.length() - 1);
+
+    if (checkPassword(input)) {
+      System.out.println("Access granted.");
+    } else {
+      System.out.println("Access denied!");
+    }
+  }
+
+  // reverse the order of the scramble methhod.
+  // E.g. 1>2>3>4>5 ===> 5>4>3>2>1
+  public static char[] unScramble() {
+    /* Scramble a password by transposing pairs of bits. */
+    // char[] a = password.toCharArray();
+    char[] expected = { 0xF4, 0xC0, 0x97, 0xF0, 0x77, 0x97, 0xC0, 0xE4, 0xF0, 0x77, 0xA4, 0xD0, 0xC5, 0x77, 0xF4, 0x86,
+        0xD0, 0xA5, 0x45, 0x96, 0x27, 0xB5, 0x77, 0xE1, 0xC0, 0xA4, 0x95, 0x94, 0xD1, 0x95, 0x94, 0xD0 };
+    for (int b = 0; b < expected.length; b++) {
+      char c = expected[b];
+      c = switchBits(c, 6, 7);
+      c = switchBits(c, 2, 5);
+      c = switchBits(c, 3, 4);
+      c = switchBits(c, 0, 1);
+      /* d = switchBits(d, 4, 5); e = switchBits(e, 5, 6); */
+      c = switchBits(c, 4, 7);
+      c = switchBits(c, 5, 6);
+      c = switchBits(c, 0, 3);
+      /* c = switchBits(c,14,3); c = switchBits(c, 2, 0); */
+      c = switchBits(c, 1, 2);
+
+      expected[b] = c;
+    }
+    return expected;
+  }
+
+  public static char[] scramble(String password) {
+    /* Scramble a password by transposing pairs of bits. */
+    char[] a = password.toCharArray();
+    for (int b = 0; b < a.length; b++) {
+      char c = a[b];
+      c = switchBits(c, 1, 2);
+      c = switchBits(c, 0, 3); /* c = switchBits(c,14,3); c = switchBits(c, 2, 0); */
+      c = switchBits(c, 5, 6);
+      c = switchBits(c, 4, 7);
+      c = switchBits(c, 0, 1); /* d = switchBits(d, 4, 5); e = switchBits(e, 5, 6); */
+      c = switchBits(c, 3, 4);
+      c = switchBits(c, 2, 5);
+      c = switchBits(c, 6, 7);
+      a[b] = c;
+    }
+    return a;
+  }
+
+  public static char switchBits(char c, int p1, int p2) {
+    /*
+     * Move the bit in position p1 to position p2, and move the bit that was in
+     * position p2 to position p1. Precondition: p1 < p2
+     */
+    char mask1 = (char) (1 << p1);
+    char mask2 = (char) (1 << p2);
+    /* char mask3 = (char)(1<<p1<<p2); mask1++; mask1--; */
+    char bit1 = (char) (c & mask1);
+    char bit2 = (char) (c & mask2);
+    /*
+     * System.out.println("bit1 " + Integer.toBinaryString(bit1));
+     * System.out.println("bit2 " + Integer.toBinaryString(bit2));
+     */
+    char rest = (char) (c & ~(mask1 | mask2));
+    char shift = (char) (p2 - p1);
+    char result = (char) ((bit1 << shift) | (bit2 >> shift) | rest);
+    return result;
+  }
+
+  public static boolean checkPassword(String password) {
+    char[] scrambled = scramble(password);
+    char[] expected = { 0xF4, 0xC0, 0x97, 0xF0, 0x77, 0x97, 0xC0, 0xE4, 0xF0, 0x77, 0xA4, 0xD0, 0xC5, 0x77, 0xF4, 0x86,
+        0xD0, 0xA5, 0x45, 0x96, 0x27, 0xB5, 0x77, 0xE1, 0xC0, 0xA4, 0x95, 0x94, 0xD1, 0x95, 0x94, 0xD0 };
+    return Arrays.equals(scrambled, expected);
+  }
+
+}
+```
 
 ### Flag
-picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}
+`picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}`
+
+```
+Reverse Password: picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}
+Enter vault password: picoCTF{s0m3_m0r3_b1t_sh1fTiNg_60bea5ea1}
+Access granted.
+```
 
 - - -
 
