@@ -838,7 +838,7 @@ Access granted.
 Points: 200
 
 ## Problem
-What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/bee4f468b435b1693aa13e0d6c616573/test.S) located in the directory at /problems/asm1_5_301df039c0ee4ee4dfa8adad6a40b875.
+What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm1test.S) located in the directory at /problems/asm1_5_301df039c0ee4ee4dfa8adad6a40b875.
 
 ### Hint
 >assembly [conditions](https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
@@ -854,7 +854,7 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 Points: 250
 
 ## Problem
-What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/f4eabe889f4e1c2ddb0232e87eb5e785/test.S) located in the directory at /problems/asm2_3_edb10ce41667cb1cd4213657dae580fd.
+What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm2test.S) located in the directory at /problems/asm2_3_edb10ce41667cb1cd4213657dae580fd.
 
 ### Hint
 >assembly [conditions](https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
@@ -869,7 +869,7 @@ What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (startin
 Points: 300
 
 ## Problem
-What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/0f75abb569e8a11ee4b1975d111676fb/test.S) located in the directory at /problems/asm3_1_b71abaa5cc92e3f7061f23957206b434.
+What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm3test.S) located in the directory at /problems/asm3_1_b71abaa5cc92e3f7061f23957206b434.
 
 ### Hint
 >more(?) [registers](https://wiki.skullsecurity.org/index.php?title=Registers)
@@ -884,7 +884,7 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 Points: 300
 
 ## Problem
-What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](https://2019shell1.picoctf.com/static/2ebdf4385b3c4d69aef0240d6140c84b/test.S) located in the directory at /problems/asm4_2_0932017a5f5efe2bc813afd0fe0603aa.
+What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm4test.S) located in the directory at /problems/asm4_2_0932017a5f5efe2bc813afd0fe0603aa.
 
 ### Hint
 >Treat the Array argument as a pointer
