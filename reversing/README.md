@@ -975,6 +975,10 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 
 ## Solution
 
+<p align="center">
+<img src="https://www.cs.virginia.edu/~evans/cs216/guides/x86-registers.png" alt="Stack Registers">
+</p>
+
 ### Flag
 
 - - -
