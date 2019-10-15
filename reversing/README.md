@@ -154,6 +154,10 @@ This vault uses for-loops and byte arrays. The source code for this vault is her
 
 ## Solution [Here](https://repl.it/@x3sphiorx/vd3)
 
+<p align="center">
+<img src="https://i.imgur.com/9dBCUK1.png" alt="Encryption Process" width="500">
+</p>
+
 ```java
 import java.util.Scanner;
 
@@ -821,7 +825,7 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 ### Stack during Subroutine Call
 
 <p align="center">
-<img src="https://www.cs.virginia.edu/~evans/cs216/guides/stack-convention.png" alt="Stack during Subroutine Call">
+<img src="https://i.imgur.com/exh4kaR.png" alt="Stack during Subroutine Call" width="500">
 </p>
 
 ### Method 1 : Visualising the questions. 
@@ -890,7 +894,9 @@ What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (startin
 
 This is how the stack looks like after performing the `mov ebp,esp` command & after operation :
 ```
-;'mov ebp,esp'					|	'after operation'
+'mov ebp,esp'					|	'after operation'
++---------------+				|	+---------------+
+| reserve       | <-- ebp - 0x10		|	| reserve       | <-- ebp - 0x10
 +---------------+				|	+---------------+
 | reserve       | <-- ebp - 0xc			|	| reserve       | <-- ebp - 0xc	
 +---------------+				|	+---------------+		
@@ -976,7 +982,7 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 ## Solution
 
 <p align="center">
-<img src="https://www.cs.virginia.edu/~evans/cs216/guides/x86-registers.png" alt="Stack Registers">
+<img src="https://i.imgur.com/ZSn4oxn.png" alt="Stack Registers" width="500" >
 </p>
 
 ### Flag
