@@ -463,6 +463,7 @@ This vault uses bit shifts to convert a password string into an array of integer
 
 >You will also need to consult an ASCII table such as this one: https://www.asciitable.com/
 
+## Solution [Here](https://repl.it/@x3sphiorx/vd7)
 
 ```java
 import java.util.*;
@@ -678,38 +679,10 @@ System.out.println("bit2 " + Integer.toBinaryString(bit2)); */
  public boolean checkPassword(String password) {
   char[] scrambled = scramble(password);
   char[] expected = {
-   0xF4,
-   0xC0,
-   0x97,
-   0xF0,
-   0x77,
-   0x97,
-   0xC0,
-   0xE4,
-   0xF0,
-   0x77,
-   0xA4,
-   0xD0,
-   0xC5,
-   0x77,
-   0xF4,
-   0x86,
-   0xD0,
-   0xA5,
-   0x45,
-   0x96,
-   0x27,
-   0xB5,
-   0x77,
-   0xE1,
-   0xC0,
-   0xA4,
-   0x95,
-   0x94,
-   0xD1,
-   0x95,
-   0x94,
-   0xD0
+   0xF4, 0xC0, 0x97, 0xF0, 0x77, 0x97, 0xC0, 0xE4,
+   0xF0, 0x77, 0xA4, 0xD0, 0xC5, 0x77, 0xF4, 0x86,
+   0xD0, 0xA5, 0x45, 0x96, 0x27, 0xB5, 0x77, 0xE1,
+   0xC0, 0xA4, 0x95, 0x94, 0xD1, 0x95, 0x94, 0xD0
   };
   return Arrays.equals(scrambled, expected);
  }
@@ -843,10 +816,63 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 ### Hint
 >assembly [conditions](https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
 
-## Solution
+## Solution (2 Methods)
+
+### Stack during Subroutine Call
+
+<p align="center">
+<img src="https://www.cs.virginia.edu/~evans/cs216/guides/stack-convention.png" alt="Stack during Subroutine Call">
+</p>
+
+### Method 1 : Visualising the questions. 
+
+`Calling asm1(0x345) >> move {0x345} into [ebp+08]`
+
+This is how the stack looks like after performing the `mov ebp,esp` command:
+```
++---------------+
+| old ebp       | <-- ebp
++---------------+
+| ret           | <-- ebp + 0x4
++---------------+
+| 0x345	        | <-- ebp + 0x8 (arg1)
++---------------+
+
+```
+
+```assembly
+asm1:						;						Description of Function
+	<+0>:	push   ebp			;						function prologue
+	<+1>:	mov    ebp,esp			;						~
+	<+3>:	cmp    DWORD PTR [ebp+0x8],0x37a;						cmp - compare {0x345 vs 0x37a} = 345 < 37a (lesser than; therefore no jump)
+	<+10>:	jg     0x512 <asm1+37>		;	---------				JG - Jump Greater if true
+						;		|		
+	<+12>:	cmp    DWORD PTR [ebp+0x8],0x345;		|				cmp - compare {0x345 vs 0x345} = 345 = 345 (equal than; therefore no jump)
+	<+19>:	jne    0x50a <asm1+29>		;	--------|----------			JNE - Jump not Equal if true
+						;		|	 ||
+	<+21>:	mov    eax,DWORD PTR [ebp+0x8]	;		|	 ||			move [ebp+0x8] = {0x345} into EAX
+	<+24>:	add    eax,0x3			;		|	 ||			add 0x3 to EAX = {0x345 + 0x3} = {0x348} <<<< Correct Answer; no condition jump to {asm1+60}
+	<+27>:	jmp    0x529 <asm1+60>		;	--------|--------||--------------	JMP - Jump to address {asm1+60}
+						;		|	 ||    		v
+	<+29>:	mov    eax,DWORD PTR [ebp+0x8]	;   <-----------|----------		v	move [ebp+0x8] = {0x345} into EAX
+	<+32>:	sub    eax,0x3			;		|    			v	sub 0x3 to EAX
+	<+35>:	jmp    0x529 <asm1+60>		;	--------|-----------------------v	JMP - Jump to address {asm1+60}
+						;		|			v
+	<+37>:	cmp    DWORD PTR [ebp+0x8],0x5ff;    <-----------			v	cmp - compare {0x345 vs 0x5ff}
+	<+44>:	jne    0x523 <asm1+54>		;	-----------------		v	JNE - Jump not Equal if true
+						;			|		v
+	<+46>:	mov    eax,DWORD PTR [ebp+0x8]	;			|		v	move [ebp+0x8] = {0x345} into EAX
+	<+49>:	sub    eax,0x3			;			|		v	sub 0x3 to EAX
+	<+52>:	jmp    0x529 <asm1+60>		;	----------------|---------------v	JMP - Jump to address {asm1+60}
+						;			|	|	v	
+	<+54>:	mov    eax,DWORD PTR [ebp+0x8]	;   <--------------------	|	v	move [ebp+0x8] = {0x345} into EAX
+	<+57>:	add    eax,0x3			;				|	v	add 0x3 to EAX
+	<+60>:	pop    ebp			;   <------------------------------------	POP EBP, return Stack pointer back to orignial. 
+	<+61>:	ret    				;						return
+```
 
 ### Flag
-0x348
+`0x348`
 
 - - -
 
@@ -854,6 +880,28 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 Points: 250
 
 ## Problem
+
+```assembly
+asm2:
+	<+0>:	push   ebp
+	<+1>:	mov    ebp,esp
+	<+3>:	sub    esp,0x10
+	<+6>:	mov    eax,DWORD PTR [ebp+0xc]
+	<+9>:	mov    DWORD PTR [ebp-0x4],eax
+	<+12>:	mov    eax,DWORD PTR [ebp+0x8]
+	<+15>:	mov    DWORD PTR [ebp-0x8],eax
+	<+18>:	jmp    0x50c <asm2+31>
+	
+	<+20>:	add    DWORD PTR [ebp-0x4],0x1
+	<+24>:	add    DWORD PTR [ebp-0x8],0xcc
+	<+31>:	cmp    DWORD PTR [ebp-0x8],0x3937
+	<+38>:	jle    0x501 <asm2+20>
+	
+	<+40>:	mov    eax,DWORD PTR [ebp-0x4]
+	<+43>:	leave  
+	<+44>:	ret    
+```
+
 What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm2test.S) located in the directory at /problems/asm2_3_edb10ce41667cb1cd4213657dae580fd.
 
 ### Hint
@@ -869,6 +917,22 @@ What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (startin
 Points: 300
 
 ## Problem
+
+```assembly
+asm3:
+	<+0>:	push   ebp
+	<+1>:	mov    ebp,esp
+	<+3>:	xor    eax,eax
+	<+5>:	mov    ah,BYTE PTR [ebp+0x9]
+	<+8>:	shl    ax,0x10
+	<+12>:	sub    al,BYTE PTR [ebp+0xd]
+	<+15>:	add    ah,BYTE PTR [ebp+0xf]
+	<+18>:	xor    ax,WORD PTR [ebp+0x10]
+	<+22>:	nop
+	<+23>:	pop    ebp
+	<+24>:	ret    
+```
+
 What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm3test.S) located in the directory at /problems/asm3_1_b71abaa5cc92e3f7061f23957206b434.
 
 ### Hint
@@ -884,6 +948,72 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 Points: 300
 
 ## Problem
+
+```assembly
+asm4:
+	<+0>:	push   ebp
+	<+1>:	mov    ebp,esp
+	<+3>:	push   ebx
+	<+4>:	sub    esp,0x10
+	<+7>:	mov    DWORD PTR [ebp-0x10],0x25c
+	<+14>:	mov    DWORD PTR [ebp-0xc],0x0
+	<+21>:	jmp    0x518 <asm4+27>
+	
+	<+23>:	add    DWORD PTR [ebp-0xc],0x1
+	<+27>:	mov    edx,DWORD PTR [ebp-0xc]
+	<+30>:	mov    eax,DWORD PTR [ebp+0x8]
+	<+33>:	add    eax,edx
+	<+35>:	movzx  eax,BYTE PTR [eax]
+	<+38>:	test   al,al
+	<+40>:	jne    0x514 <asm4+23>
+	
+	<+42>:	mov    DWORD PTR [ebp-0x8],0x1
+	<+49>:	jmp    0x587 <asm4+138>
+	
+	<+51>:	mov    edx,DWORD PTR [ebp-0x8]
+	<+54>:	mov    eax,DWORD PTR [ebp+0x8]
+	<+57>:	add    eax,edx
+	<+59>:	movzx  eax,BYTE PTR [eax]
+	<+62>:	movsx  edx,al
+	<+65>:	mov    eax,DWORD PTR [ebp-0x8]
+	<+68>:	lea    ecx,[eax-0x1]
+	<+71>:	mov    eax,DWORD PTR [ebp+0x8]
+	<+74>:	add    eax,ecx
+	<+76>:	movzx  eax,BYTE PTR [eax]
+	<+79>:	movsx  eax,al
+	<+82>:	sub    edx,eax
+	<+84>:	mov    eax,edx
+	<+86>:	mov    edx,eax
+	<+88>:	mov    eax,DWORD PTR [ebp-0x10]
+	<+91>:	lea    ebx,[edx+eax*1]
+	<+94>:	mov    eax,DWORD PTR [ebp-0x8]
+	<+97>:	lea    edx,[eax+0x1]
+	<+100>:	mov    eax,DWORD PTR [ebp+0x8]
+	<+103>:	add    eax,edx
+	<+105>:	movzx  eax,BYTE PTR [eax]
+	<+108>:	movsx  edx,al
+	<+111>:	mov    ecx,DWORD PTR [ebp-0x8]
+	<+114>:	mov    eax,DWORD PTR [ebp+0x8]
+	<+117>:	add    eax,ecx
+	<+119>:	movzx  eax,BYTE PTR [eax]
+	<+122>:	movsx  eax,al
+	<+125>:	sub    edx,eax
+	<+127>:	mov    eax,edx
+	<+129>:	add    eax,ebx
+	<+131>:	mov    DWORD PTR [ebp-0x10],eax
+	<+134>:	add    DWORD PTR [ebp-0x8],0x1
+	<+138>:	mov    eax,DWORD PTR [ebp-0xc]
+	<+141>:	sub    eax,0x1
+	<+144>:	cmp    DWORD PTR [ebp-0x8],eax
+	<+147>:	jl     0x530 <asm4+51>
+	
+	<+149>:	mov    eax,DWORD PTR [ebp-0x10]
+	<+152>:	add    esp,0x10
+	<+155>:	pop    ebx
+	<+156>:	pop    ebp
+	<+157>:	ret    
+```
+
 What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm4test.S) located in the directory at /problems/asm4_2_0932017a5f5efe2bc813afd0fe0603aa.
 
 ### Hint
