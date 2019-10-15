@@ -837,12 +837,11 @@ This is how the stack looks like after performing the `mov ebp,esp` command:
 +---------------+
 | 0x345	        | <-- ebp + 0x8 (arg1)
 +---------------+
-
 ```
 
 ```assembly
 asm1:						;						Description of Function
-	<+0>:	push   ebp			;						function prologue
+	<+0>:	push   ebp			;						function Prologue
 	<+1>:	mov    ebp,esp			;						~
 	<+3>:	cmp    DWORD PTR [ebp+0x8],0x37a;						cmp - compare {0x345 vs 0x37a} = 345 < 37a (lesser than; therefore no jump)
 	<+10>:	jg     0x512 <asm1+37>		;	---------				JG - Jump Greater if true
@@ -864,10 +863,10 @@ asm1:						;						Description of Function
 	<+46>:	mov    eax,DWORD PTR [ebp+0x8]	;			|		v	move [ebp+0x8] = {0x345} into EAX
 	<+49>:	sub    eax,0x3			;			|		v	sub 0x3 to EAX
 	<+52>:	jmp    0x529 <asm1+60>		;	----------------|---------------v	JMP - Jump to address {asm1+60}
-						;			|	|	v	
-	<+54>:	mov    eax,DWORD PTR [ebp+0x8]	;   <--------------------	|	v	move [ebp+0x8] = {0x345} into EAX
-	<+57>:	add    eax,0x3			;				|	v	add 0x3 to EAX
-	<+60>:	pop    ebp			;   <------------------------------------	POP EBP, return Stack pointer back to orignial. 
+						;			|		v	
+	<+54>:	mov    eax,DWORD PTR [ebp+0x8]	;   <--------------------	 	v	move [ebp+0x8] = {0x345} into EAX
+	<+57>:	add    eax,0x3			;					v	add 0x3 to EAX
+	<+60>:	pop    ebp			;   <------------------------------------	function Epilogue
 	<+61>:	ret    				;						return
 ```
 
@@ -880,28 +879,6 @@ asm1:						;						Description of Function
 Points: 250
 
 ## Problem
-
-```assembly
-asm2:
-	<+0>:	push   ebp
-	<+1>:	mov    ebp,esp
-	<+3>:	sub    esp,0x10
-	<+6>:	mov    eax,DWORD PTR [ebp+0xc]
-	<+9>:	mov    DWORD PTR [ebp-0x4],eax
-	<+12>:	mov    eax,DWORD PTR [ebp+0x8]
-	<+15>:	mov    DWORD PTR [ebp-0x8],eax
-	<+18>:	jmp    0x50c <asm2+31>
-	
-	<+20>:	add    DWORD PTR [ebp-0x4],0x1
-	<+24>:	add    DWORD PTR [ebp-0x8],0xcc
-	<+31>:	cmp    DWORD PTR [ebp-0x8],0x3937
-	<+38>:	jle    0x501 <asm2+20>
-	
-	<+40>:	mov    eax,DWORD PTR [ebp-0x4]
-	<+43>:	leave  
-	<+44>:	ret    
-```
-
 What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm2test.S) located in the directory at /problems/asm2_3_edb10ce41667cb1cd4213657dae580fd.
 
 ### Hint
@@ -909,8 +886,66 @@ What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (startin
 
 ## Solution
 
-### Flag
+`Calling asm2(0x7,0x18) >> move {0x7} into [ebp+08] & {0x18} into [ebp+0c]`
 
+This is how the stack looks like after performing the `mov ebp,esp` command & after operation :
+```
+;'mov ebp,esp'					|	'after operation'
++---------------+				|	+---------------+
+| reserve       | <-- ebp - 0xc			|	| reserve       | <-- ebp - 0xc	
++---------------+				|	+---------------+		
+| reserve      	| <-- ebp - 0x8			|	| 0x3967     	| <-- ebp - 0x8	(0x7 + [48 x 0xcc = 0x3960])
++---------------+				|	+---------------+	
+| reserve       | <-- ebp - 0x4			|	| 0x60	        | <-- ebp - 0x4 (0x18 + 0x48)
++---------------+				|	+---------------+
+| old ebp       | <-- ebp			|	| old ebp       | <-- ebp	
++---------------+				|	+---------------+		
+| ret           | <-- ebp + 0x4			|	| ret           | <-- ebp + 0x4	
++---------------+				|	+---------------+			
+| 0x7	        | <-- ebp + 0x8 (arg1)		|	| 0x7	        | <-- ebp + 0x8 (arg1)	
++---------------+				|	+---------------+	
+| 0x18	        | <-- ebp + 0xc (arg2)		|	| 0x18	        | <-- ebp + 0xc (arg2)		
++---------------+				|	+---------------+
+```
+
+```assembly
+asm2:						;				Description of Function
+	<+0>:	push   ebp			;				function Prologue
+	<+1>:	mov    ebp,esp			;				~
+	<+3>:	sub    esp,0x10			;				reserve 16 bytes on stack {0x10} = 16 in hex
+	<+6>:	mov    eax,DWORD PTR [ebp+0xc]	;				move [ebp+0xc] = {0x18} into EAX
+	<+9>:	mov    DWORD PTR [ebp-0x4],eax	;				move EAX into reserve stack address [ebp-04]
+	<+12>:	mov    eax,DWORD PTR [ebp+0x8]	;				move [ebp+0x8] = {0x7} into EAX
+	<+15>:	mov    DWORD PTR [ebp-0x8],eax	;				move EAX into reserve stack address [ebp-0xc]
+	<+18>:	jmp    0x50c <asm2+31>		;	---------		JMP - Jump to address {asm1+31}
+						;		|
+	<+20>:	add    DWORD PTR [ebp-0x4],0x1	;	<-------|--------	add 0x1 to [ebp-0x4]	
+	<+24>:	add    DWORD PTR [ebp-0x8],0xcc	;		|	^	add 0xcc to [ebp-0x8]
+	<+31>:	cmp    DWORD PTR [ebp-0x8],0x3937 ;	<--------	^	cmp - compare [ebp-0x8] vs {0x3937}  
+	<+38>:	jle    0x501 <asm2+20>		;	-----------------	JLE - Jump Less if true
+						;
+	<+40>:	mov    eax,DWORD PTR [ebp-0x4]	;				move [ebp-0x4] = {0x60} into EAX
+	<+43>:	leave  				;				function Epilogue
+	<+44>:	ret    				;				return
+```
+
+```assembly
+;After this line
+<+12>:	mov    eax,DWORD PTR [ebp+0x8]	; 
+<+15>:	mov    DWORD PTR [ebp-0x8],eax	; [ebp-0x8] contain the value of 0x7
+
+;Next, the program would go into looping operation where 0xcc is added into [ebp-0x8] 
+;and the exit condition is to be greater than `0x3937`
+<+24>:	add    DWORD PTR [ebp-0x8],0xcc	;
+<+31>:	cmp    DWORD PTR [ebp-0x8],0x3937 ;
+
+;Therefore 0x3937 - 0x7(inital) = 0x3930
+;No. Of Loops = 0x3930 / 0xcc = 47 Remainder 9C ≈ 48 Cycles (Greater than to exit)
+;Finally, 0x18 + 0x48 = 0x60 (Correct Answer)
+```
+
+### Flag
+`0x60`
 - - -
 
 # asm3
