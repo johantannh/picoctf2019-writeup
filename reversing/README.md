@@ -31,8 +31,6 @@ Points: 100
 >Look up the charAt() method online.
 
 ## Solution
-Firstly, each ValutDoor1.java differ from each others or other team, so please get the correct version. 
-
 Same as the previous task, the password is within the checkPassword method. Upon looking up the source code for the vaultDoor1.java, the new checkPassword method tries to scan each character of the password input into the program. The sequence and the indexing of the password are obfuscated to increase the difficulty of decoding the password. 
 
 Length of Password = 32. 
@@ -165,8 +163,14 @@ class Main {
   static String CipherText = "jU5t_a_sna_3lpm13gc49_u_4_m0rf41";
 
   public static void main(String[] args) {
-    String userInput = "picoCTF{" + CipherText + "}";
-    System.out.println("Enter vault password: " + userInput);
+    
+    System.out.println("Cipher password: " + CipherText);
+
+    String pass = reversePassword(CipherText);
+
+    String userInput = "picoCTF{" + pass + "}";
+  
+    System.out.println("Enter password: " + userInput);
 
     String input = userInput.substring("picoCTF{".length(), userInput.length() - 1);
 
@@ -199,22 +203,39 @@ class Main {
     }
 
     String s = new String(buffer);
-    String reversePassword = new String(buffer);
-
-    System.out.println("Password Reverse : picoCTF{" + reversePassword + "}");
 
     return s.equals("jU5t_a_sna_3lpm13gc49_u_4_m0rf41");
   }
 
+
+  public static String reversePassword(String password) {
+    char[] buffer = new char[32];
+    int i;
+
+    for (i = 0; i < 8; i++) {
+      buffer[i] = password.charAt(i);
+    }
+    for (; i < 16; i++) {
+      buffer[i] = password.charAt(23 - i);
+    }
+    for (; i < 32; i += 2) {
+      buffer[i] = password.charAt(46 - i);
+    }
+    for (i = 31; i >= 17; i -= 2) {
+      buffer[i] = password.charAt(i);
+    }
+
+    return new String(buffer);
+  }
 }
 ```
 ### Flag
 `picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}`
 
 ```
-Enter vault password: picoCTF{jU5t_a_sna_3lpm13gc49_u_4_m0rf41}
-Password Reverse: picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}
-Access denied!
+Cipher password: jU5t_a_sna_3lpm13gc49_u_4_m0rf41
+Enter password: picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_90cf31}
+Access granted.
 ```
 - - -
 
