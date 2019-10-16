@@ -958,22 +958,6 @@ asm2:						;				Description of Function
 Points: 300
 
 ## Problem
-
-```assembly
-asm3:
-	<+0>:	push   ebp
-	<+1>:	mov    ebp,esp
-	<+3>:	xor    eax,eax
-	<+5>:	mov    ah,BYTE PTR [ebp+0x9]
-	<+8>:	shl    ax,0x10
-	<+12>:	sub    al,BYTE PTR [ebp+0xd]
-	<+15>:	add    ah,BYTE PTR [ebp+0xf]
-	<+18>:	xor    ax,WORD PTR [ebp+0x10]
-	<+22>:	nop
-	<+23>:	pop    ebp
-	<+24>:	ret    
-```
-
 What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm3test.S) located in the directory at /problems/asm3_1_b71abaa5cc92e3f7061f23957206b434.
 
 ### Hint
@@ -985,8 +969,71 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 <img src="https://i.imgur.com/ZSn4oxn.png" alt="Stack Registers" width="500" >
 </p>
 
-### Flag
 
+### x86 Registers Structure
+
+>Credits to 'Dvd848' for writing a excellent guide for a similar question in 2018 [Here](https://github.com/Dvd848/CTFs/blob/master/2018_picoCTF/assembly-3.md)
+
+`Calling asm3(0xc264bd5c,0xb5a06caa,0xad761175) >> move {0xc264bd5c} into [ebp+08], {0xb5a06caa} into [ebp+0c], {0xad761175} into [ebp+10]`
+
+This is how the stack looks like after performing the `mov ebp,esp` command:
+```
+							'little-endian' (reverse form)
++---------------+				|	+---------------+			
+| old ebp       | <-- ebp			|	| old ebp       | <-- ebp		
++---------------+				|	+---------------+
+| ret           | <-- ebp + 0x4			|	| ret           | <-- ebp + 0x4
++---------------+				|	+---------------+		
+| 0xc264bd5c    | <-- ebp + 0x8 (arg1)		|	|  5c|bd|64|c2  | <-- ebp + 0x8 (arg1)
++---------------+				|	+---------------+
+| 0xb5a06caa    | <-- ebp + 0xc (arg2)		|	|  aa|6c|a0|b5  | <-- ebp + 0xc (arg2)	
++---------------+				|	+---------------+		
+| 0xad761175    | <-- ebp + 0x10 (arg3)		|	|  75|11|76|ad  | <-- ebp + 0x10 (arg3)	
++---------------+				|	+---------------+
+```
+And due to endianness (little-endian), this is how the stack looks like, relative to ebp:
+
+```
+Byte grouping:
+
++0x8 +0x9 +0xA +0xB +0xC +0xD +0xE +0xF +0x10 0x11 0x12 0x13
++----+----+----+----+----+----+----+----+----+----+----+----+
+| 5c | bd | 64 | c2 | aa | 6c | a0 | b5 | 75 | 11 | 76 | ad |
++----+----+----+----+----+----+----+----+----+----+----+----+
+<---------------------------read RTL-------------------------
+
+Word grouping:
++0x8   +0xA   +0xC   +0xE   +0x10  +0x12
++------+------+------+------+------+------+
+| 52bd | 64c2 | aa6c | a0b5 | 7511 | 76ad |
++------+------+------+------+------+------+
+<---------------read RTL-------------------
+
+DWord grouping:
++0x8	   +0xC   	+0x10
++----------+----------+----------+
+| 52bd64c2 | aa6ca0b5 | 751176ad |
++----------+----------+----------+
+<-------------read RTL------------
+```
+
+```assembly
+asm3:						;	Description of Function
+	<+0>:	push   ebp			;	function Prologue
+	<+1>:	mov    ebp,esp			;	~
+	<+3>:	xor    eax,eax			;	faster way of moving {0} into EAX		
+	<+5>:	mov    ah,BYTE PTR [ebp+0x9]	;	base on 'Byte grouping' [ebp+0x9] = {0xbd}, mov ah = {0xbd00}		
+	<+8>:	shl    ax,0x10			;	sh1 (left shifts) by 0x10, result ax = 0 			
+	<+12>:	sub    al,BYTE PTR [ebp+0xd]	;	sub al with BYTE [ebp+0xd] = {0x6c} = 0x0-0x6c=0x94 (1 bit overlow, 0x100-0x6c=0x94)
+	<+15>:	add    ah,BYTE PTR [ebp+0xf]	;	add ah with BYTE [ebp+0xf] = {0xb5} = 0xb5, ax = {0xb594} 			
+	<+18>:	xor    ax,WORD PTR [ebp+0x10]	;	Xor ax with WORD [ebp+0x10] = {0x1175} Read RTL = {0xb594 XOR 0x1175} = {0xa4e1} Correct Answer 		
+	<+22>:	nop				;	no operation				
+	<+23>:	pop    ebp			;	function Epilogue				
+	<+24>:	ret    				;	return		
+```	
+
+### Flag
+`0xa4e1`
 - - -
 
 # asm4
