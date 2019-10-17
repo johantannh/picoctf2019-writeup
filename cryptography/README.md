@@ -179,16 +179,9 @@ Points: 200
 ## Problem
 >I found this cipher in an old book. Can you figure out what it says? Connect with `nc 2019shell1.picoctf.com 60147`
 
-
 ### Hint
->There are tools that make this easy. Perhaps looking at history will help
 
 ## Solution
-
-```
--------------------------------------------------------------------------------
-vhweytfl bjyj ql ghxy sote - syjrxjwvg_ql_v_hpjy_otikmt_powbwtllfi                                                      -------------------------------------------------------------------------------                                         nj njyj whf ixvb ihyj fbtw t rxtyfjy hs tw bhxy hxf hs hxy lbqu fqoo nj ltn bjy lqwa, twm fbjw q xwmjylfhhm shy fbj sqylf fqij nbtf ntl ijtwf kg t lbqu shxwmjyqwe qw fbj ljt.  q ixlf tvawhnojmej q btm btymog jgjl fh ohha xu nbjw fbj ljtijw fhom ij lbj ntl lqwaqwe; shy syhi fbj ihijwf fbtf fbjg ytfbjy uxf ij qwfh fbj khtf fbtw fbtf q iqebf kj ltqm fh eh qw, ig bjtyf ntl, tl qf njyj, mjtm nqfbqw ij, utyfog nqfb syqebf, utyfog nqfb bhyyhy hs iqwm, twm fbj fbhxebfl hs nbtf ntl gjf kjshyj ij.
-```
 
 ### Flag
 `Flag`
