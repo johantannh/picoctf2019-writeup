@@ -233,8 +233,19 @@ Points: 200
 
 ## Solution
 
+> __HexViewer Plugin__ [Plugin Here](https://github.com/facelessuser/HexViewer)
+
+> __Compare Side-By-Side__ [Plugin Here](https://github.com/DougTy/sublime-compare-side-by-side)
+* Jump to next: `Alt+N`, Jump to previous: `Alt+P`
+
+```
+Run both file in sublime text and convert them with the `HexViewer` plugin. 
+After Hex is obtain run 'Compare Side-By-Side' plugin in sublime text. 
+The comparing process might take some time.
+```
+![Hex Dump in Sublime](https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/29%20-%20GV0y9yX.gif "Hex Dump in Sublime")
 ### Flag
-`Flag`
+`picoCTF{th3yr3_a5_d1ff3r3nt_4s_bu773r_4nd_j311y_aslkjfdsalkfslkflkjdsfdszmz10548}`
 
 - - -
 
