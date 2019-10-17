@@ -233,10 +233,9 @@ Points: 200
 
 ## Solution
 
-<p align="center"><img src="https://i.imgur.com/GV0y9yX.gifv" alt="" width=""></p>
-
 ### Flag
 `Flag`
+
 - - -
 
 # where-is-the-file  
