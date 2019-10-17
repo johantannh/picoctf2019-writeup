@@ -58,7 +58,7 @@ Written as part of learning experience
 | [Based ](general-skills#based)                 					     | 200         | Solved |
 | [First Grep: Part II ](general-skills#First-Grep-Part-II )             | 200         | Solved |
 | [plumbing ](general-skills#plumbing)                       	         | 200         | Solved |
-| [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Pending writeup |
+| [whats-the-difference ](general-skills#whats-the-difference)           | 200         | Solved |
 | [where-is-the-file](general-skills#where-is-the-file )               	 | 200         | Solved |
 | [flag_shop](general-skills#flag_shop )               	                 | 300         | Solved |
 | [mus1c](general-skills#mus1c )               	               		     | 300         | Solved |
@@ -89,8 +89,9 @@ Written as part of learning experience
 | [Flags](cryptography#Flags)           					 | 200        | Solved   |
 | [Mr-Worldwide](cryptography#Mr-Worldwide)           		 | 200        | Solved   |
 | [Tapping](cryptography#Tapping)           				 | 200        | Solved   |
-| [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Pending writeup   |
+| [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Solved   |
 | [rsa-pop-quiz](cryptography#rsa-pop-quiz)           		 | 200        | Unsolved   |
+| [waves over lambda](cryptography#waves over lambda)           		 | 300        | Solved   |
 
 ## Web Exploitation [(link)](web-exploitation)
 | Challenges                                                            | Points | Status |
