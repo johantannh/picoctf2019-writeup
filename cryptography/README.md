@@ -76,17 +76,22 @@ picoCTF{jyvzzpunaolybipjvunfzpthre} => picoCTF{crossingtherubicongysimakx}
 Points: 200
 
 ## Problem
->What do the [flags](https://2019shell1.picoctf.com/static/ae23b7df04365ab0213f0158c5b5d694/flag.png) mean?
+>What do the [flags](https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/3%20-%20roldVTt.png) mean?
 
 ### Hint
 >The flag is in the format PICOCTF{}
 
 ## Solution
+The flag show is encoded in NATO phonetic alphabet, codes & signals. This can be seen below
 
-Need to use brute force techniques to fill in unknown 8 capital letters. `PICOCTF{FabdebgheTzFF}`. 
+### The Code : 
+![Flag](https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/3%20-%20roldVTt.png "Flag")
+
+### Encryption Table : 
+![Table](https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/30%20-%20YPed2b4.jpg "Table")
 
 ### Flag
-`flag`
+`PICOCTF{F1AG5AND5TUFF}`
 
 - - - 
 
