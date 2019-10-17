@@ -232,7 +232,8 @@ Points: 200
 >How do you find the difference between two files? Dumping the data from a hex editor may make it easier to compare.
 
 ## Solution
-Solution
+
+<p align="center"><img src="https://i.imgur.com/GV0y9yX.gifv" alt="" width=""></p>
 
 ### Flag
 `Flag`
