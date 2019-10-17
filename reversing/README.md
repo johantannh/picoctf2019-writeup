@@ -1058,7 +1058,7 @@ asm3:						;	Description of Function
 - - -
 
 # asm4
-Points: 300
+Points: 400
 
 ## Problem
 
