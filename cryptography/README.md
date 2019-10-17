@@ -179,7 +179,9 @@ Points: 200
 >I found this cipher in an old book. Can you figure out what it says? Connect with `nc 2019shell1.picoctf.com 60147`
 
 ### Hint
+> There are tools that make this easy.
 
+> Perhaps looking at history will help
 ## Solution
 
 ### Flag
@@ -247,7 +249,7 @@ Points: 300
 >Flag is not in the usual flag format
 
 ## Solution
-Ciphertext given is shown below. Apparently it is encoded by substitution cipher encryption. To solve this it can be easily brute-force by using online tools such as [this](https://www.guballa.de/substitution-solver) or [this]() 
+Ciphertext given is shown below. Apparently it is encoded by substitution cipher encryption. To solve this it can be easily brute-force by using online tools such as [this](https://www.guballa.de/substitution-solver) or [this](https://planetcalc.com/8047/) 
 
 ### Cipher Text
 ```
@@ -264,8 +266,9 @@ twm fbj fbhxebfl hs nbtf ntl gjf kjshyj ij.
 
 ### Encryption Key Brute-Force
 
-abcdefghijklmnopqrstuvwxyz     This clear text ...
-__`tkvmjsebqcaoiwhurylfxpnzgd`__    ... maps to this cipher text
+> This clear text ... abcdefghijklmnopqrstuvwxyz
+
+> maps to this cipher text... __`tkvmjsebqcaoiwhurylfxpnzgd`(Key)__
 
 
 ### Plain Text 
