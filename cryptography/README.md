@@ -172,7 +172,6 @@ Points: 200
 
 - - - 
 
-
 # la-cifra-de
 Points: 200
 
@@ -187,7 +186,6 @@ Points: 200
 `Flag`
 
 - - - 
-
 
 # rsa-pop-quiz
 Points: 200
@@ -236,5 +234,55 @@ n=291294636093263225595211231362220787805854512081491385477991210836223332506466
 ```
 ### Flag
 `Flag`
+
+- - - 
+
+# waves over lambda
+Points: 300
+
+## Problem
+>We made alot of substitutions to encrypt this. Can you decrypt it? Connect with `nc 2019shell1.picoctf.com 21903`.
+
+### Hint
+>Flag is not in the usual flag format
+
+## Solution
+Ciphertext given is shown below. Apparently it is encoded by substitution cipher encryption. To solve this it can be easily brute-force by using online tools such as [this](https://www.guballa.de/substitution-solver) or [this]() 
+
+### Cipher Text
+```
+-------------------------------------------------------------------------------
+vhweytfl bjyj ql ghxy sote - syjrxjwvg_ql_v_hpjy_otikmt_powbwtllfi 
+-------------------------------------------------------------------------------
+nj njyj whf ixvb ihyj fbtw t rxtyfjy hs tw bhxy hxf hs hxy lbqu fqoo nj ltn bjy lqwa, 
+twm fbjw q xwmjylfhhm shy fbj sqylf fqij nbtf ntl ijtwf kg t lbqu shxwmjyqwe qw fbj ljt.  
+q ixlf tvawhnojmej q btm btymog jgjl fh ohha xu nbjw fbj ljtijw fhom ij lbj ntl lqwaqwe; 
+shy syhi fbj ihijwf fbtf fbjg ytfbjy uxf ij qwfh fbj khtf fbtw fbtf q iqebf kj ltqm fh eh qw, 
+ig bjtyf ntl, tl qf njyj, mjtm nqfbqw ij, utyfog nqfb syqebf, utyfog nqfb bhyyhy hs iqwm, 
+twm fbj fbhxebfl hs nbtf ntl gjf kjshyj ij.
+```
+
+### Encryption Key Brute-Force
+
+abcdefghijklmnopqrstuvwxyz     This clear text ...
+__`tkvmjsebqcaoiwhurylfxpnzgd`__    ... maps to this cipher text
+
+
+### Plain Text 
+
+```
+-------------------------------------------------------------------------------
+congrats here is your flag - frequency_is_c_over_lambda_vlnhnasstm 
+-------------------------------------------------------------------------------
+we were not much more than a quarter of an hour out of our ship till we saw her sink, 
+and then i understood for the first time what was meant by a ship foundering in the sea.  
+i must acknowledge i had hardly eyes to look up when the seamen told me she was sinking; 
+for from the moment that they rather put me into the boat than that i might be said to go in, 
+my heart was, as it were, dead within me, partly with fright, partly with horror of mind, 
+and the thoughts of what was yet before me.
+```
+
+### Flag
+`picoCTF{frequency_is_c_over_lambda_vlnhnasstm}`
 
 - - - 
