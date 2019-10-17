@@ -91,7 +91,7 @@ Written as part of learning experience
 | [Tapping](cryptography#Tapping)           				 | 200        | Solved   |
 | [la-cifra-de](cryptography#la-cifra-de)           		 | 200        | Solved   |
 | [rsa-pop-quiz](cryptography#rsa-pop-quiz)           		 | 200        | Unsolved   |
-| [waves over lambda](cryptography#waves over lambda)           		 | 300        | Solved   |
+| [waves-over-lambda](cryptography#waves-over-lambda)           		 | 300        | Solved   |
 
 ## Web Exploitation [(link)](web-exploitation)
 | Challenges                                                            | Points | Status |
