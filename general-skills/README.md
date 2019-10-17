@@ -232,10 +232,10 @@ Points: 200
 >How do you find the difference between two files? Dumping the data from a hex editor may make it easier to compare.
 
 ## Solution
-Solution
 
 ### Flag
 `Flag`
+
 - - -
 
 # where-is-the-file  

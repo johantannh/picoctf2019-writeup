@@ -152,6 +152,8 @@ This vault uses for-loops and byte arrays. The source code for this vault is her
 
 ## Solution [Here](https://repl.it/@x3sphiorx/vd3)
 
+### Process of Encryption
+
 <p align="center">
 <img src="https://i.imgur.com/9dBCUK1.png" alt="Encryption Process" width="500">
 </p>
@@ -986,12 +988,9 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 
 ## Solution
 
-<p align="center">
-<img src="https://i.imgur.com/ZSn4oxn.png" alt="Stack Registers" width="500" >
-</p>
+### 'x86' Registers Structure
 
-
-### x86 Registers Structure
+<p align="center"><img src="https://i.imgur.com/ZSn4oxn.png" alt="Stack Registers" width="500"></p>
 
 >Credits to 'Dvd848' for writing a excellent guide for a similar question in 2018 [Here](https://github.com/Dvd848/CTFs/blob/master/2018_picoCTF/assembly-3.md)
 
@@ -1012,11 +1011,11 @@ This is how the stack looks like after performing the `mov ebp,esp` command:
 | 0xad761175    | <-- ebp + 0x10 (arg3)		|	|  75|11|76|ad  | <-- ebp + 0x10 (arg3)	
 +---------------+				|	+---------------+
 ```
+
 And due to endianness (little-endian), this is how the stack looks like, relative to ebp:
 
 ```
 Byte grouping:
-
 +0x8 +0x9 +0xA +0xB +0xC +0xD +0xE +0xF +0x10 0x11 0x12 0x13
 +----+----+----+----+----+----+----+----+----+----+----+----+
 | 5c | bd | 64 | c2 | aa | 6c | a0 | b5 | 75 | 11 | 76 | ad |
@@ -1036,6 +1035,7 @@ DWord grouping:
 | 52bd64c2 | aa6ca0b5 | 751176ad |
 +----------+----------+----------+
 <-------------read RTL------------
+
 ```
 
 ```assembly
@@ -1058,9 +1058,28 @@ asm3:						;	Description of Function
 - - -
 
 # asm4
-Points: 300
+Points: 400
 
 ## Problem
+
+What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm4test.S) located in the directory at /problems/asm4_2_0932017a5f5efe2bc813afd0fe0603aa.
+
+### Hint
+>Treat the Array argument as a pointer
+
+## Solution
+
+>Credits to 'xnand.netlify' for writing a excellent guide for a similar question in 2018 [Here](https://xnand.netlify.com/2018/10/22/picoctf2018-assembly-0-1-2-3-4)
+
+An alternative approach is taken to resolve the problem. Instead of visualising the code line by line, the ASM code is converted to NASM (Netwide Assembler) code for direct execution. The process of converting includes 
+
+* Removing of PTR from the ASM code. `mov    DWORD PTR [ebp-0x10],0x25c  >>>  mov    DWORD [ebp-0x10],0x25c`
+
+* Changing the jump address to labels `jmp    0x518 <asm4+27>     >>>    jmp    part_b`
+
+* Added `section .text` & `global` on the header of the NASM file
+
+### ASM Code
 
 ```assembly
 asm4:
@@ -1126,13 +1145,93 @@ asm4:
 	<+156>:	pop    ebp
 	<+157>:	ret    
 ```
+### NASM Code
 
-What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (starting with '0x'). NOTE: Your submission for this question will NOT be in the normal flag format. [Source](asm4test.S) located in the directory at /problems/asm4_2_0932017a5f5efe2bc813afd0fe0603aa.
+```assembly
+section .text
+global asm4
 
-### Hint
->Treat the Array argument as a pointer
+asm4:
+	push   ebp
+	mov    ebp,esp
+	push   ebx
+	sub    esp,0x10
+	mov    DWORD [ebp-0x10],0x25c
+	mov    DWORD [ebp-0xc],0x0
+	jmp    part_b
 
-## Solution
+part_c:	
+	add    DWORD [ebp-0xc],0x1
+	
+part_b:	
+	mov    edx,DWORD [ebp-0xc]
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,edx
+	movzx  eax,BYTE [eax]
+	test   al,al
+	jne    part_c
+	mov    DWORD [ebp-0x8],0x1
+	jmp    part_d
 
+part_e:
+	mov    edx,DWORD [ebp-0x8]
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,edx
+	movzx  eax,BYTE [eax]
+	movsx  edx,al
+	mov    eax,DWORD [ebp-0x8]
+	lea    ecx,[eax-0x1]
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,ecx
+	movzx  eax,BYTE [eax]
+	movsx  eax,al
+	sub    edx,eax
+	mov    eax,edx
+	mov    edx,eax
+	mov    eax,DWORD [ebp-0x10]
+	lea    ebx,[edx+eax*1]
+	mov    eax,DWORD [ebp-0x8]
+	lea    edx,[eax+0x1]
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,edx
+	movzx  eax,BYTE [eax]
+	movsx  edx,al
+	mov    ecx,DWORD [ebp-0x8]
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,ecx
+	movzx  eax,BYTE [eax]
+	movsx  eax,al
+	sub    edx,eax
+	mov    eax,edx
+	add    eax,ebx
+	mov    DWORD [ebp-0x10],eax
+	add    DWORD [ebp-0x8],0x1
+
+part_d:	
+	mov    eax,DWORD [ebp-0xc]
+	sub    eax,0x1
+	cmp    DWORD [ebp-0x8],eax
+	jl     part_e
+	mov    eax,DWORD [ebp-0x10]
+	add    esp,0x10
+	pop    ebx
+	pop    ebp
+	ret    
+```
+
+Next is to write a C program that uses the exported library:
+
+```C
+#include <stdio.h>
+
+extern int asm4(char a[]);
+
+int main(void) {
+	char a[]="picoCTF_376ee";
+	printf("0x%x\n", asm4(a));
+
+	return 0;
+}
+```
 ### Flag
 
