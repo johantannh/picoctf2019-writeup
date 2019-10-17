@@ -74,10 +74,11 @@ Written as part of learning experience
 | [vault-door-6](reversing#vault-door-6)       				| 350        | Solved |
 | [vault-door-7](reversing#vault-door-7)       				| 400        | Solved |
 | [asm1](reversing#asm1)       							| 200        | Solved |
-| [asm2](reversing#asm2)       							| 200        | Solved |
-| [asm3](reversing#asm3)       							| 250        | Solved |
-| [asm4](reversing#asm4)       							| 300        | Solved |
+| [asm2](reversing#asm2)       							| 250        | Solved |
+| [asm3](reversing#asm3)       							| 300        | Solved |
+| [asm4](reversing#asm4)       							| 400        | Solved |
 | [reverse_cipher](reversing#reverse_cipher)       			|300        | Unsolved |
+
 ## Cryptography [(link)](cryptography)
 | Challenges                                                | Points     | Status   |
 |:----------------------------------------------------------|:-----------|:---------|
