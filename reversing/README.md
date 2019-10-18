@@ -1248,7 +1248,7 @@ Compile the prgram as seen below :
 
 Lastly, Run the program as following : 
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/32-%20fEfgFrcg.png" alt="Stack during Subroutine Call"></p>
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/32-%20fEfgFrcg.png" alt="linux console"></p>
 
 ### Troubleshooting
 
@@ -1265,8 +1265,147 @@ You may follow this solution to resolve the error from `Froosh` @ [Here](https:/
 - - -
 
 ### Method 2 for ASM1
+
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/35%20-%20Aeg457Ehe.png" alt="linux console"></p>
+
+### NASM Code (end_asm_rev.S)
+```assembly
+section .text
+global asm1
+
+asm1:
+	push   ebp
+	mov    ebp,esp
+	cmp    DWORD [ebp+0x8],0x37a
+	jg     part_a
+	
+	cmp    DWORD [ebp+0x8],0x345
+	jne    part_b
+	
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,0x3
+	jmp    part_c
+	
+part_b: 
+	mov    eax,DWORD [ebp+0x8]
+	sub    eax,0x3
+	jmp    part_c
+
+part_a:
+	cmp    DWORD [ebp+0x8],0x5ff
+	jne    part_d
+
+	mov    eax,DWORD [ebp+0x8]
+	sub    eax,0x3
+	jmp    part_c
+
+part_d:
+	mov    eax,DWORD [ebp+0x8]
+	add    eax,0x3
+
+part_c:
+	pop    ebp
+	ret   
+```
+
+### C Code (solution.c)
+
+```c
+#include <stdio.h>
+
+extern int asm1(int a);
+
+int main(void) {
+	
+	printf("0x%x\n", asm1(0x345));
+
+	return 0;
+}
+```
+
 ### Method 2 for ASM2
+
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/34%20-%20Gd235DFwf.png" alt="linux console"></p>
+
+### NASM Code (end_asm_rev.S)
+```assembly
+section .text
+global asm2
+
+
+asm2:
+	push   ebp
+	mov    ebp,esp
+	sub    esp,0x10
+	mov    eax,DWORD [ebp+0xc]
+	mov    DWORD [ebp-0x4],eax
+	mov    eax,DWORD [ebp+0x8]
+	mov    DWORD [ebp-0x8],eax
+	jmp    part_a
+
+part_b:
+	add    DWORD [ebp-0x4],0x1
+	add    DWORD [ebp-0x8],0xcc
+
+part_a:	
+	cmp    DWORD [ebp-0x8],0x3937
+	jle    part_b
+	
+	mov    eax,DWORD [ebp-0x4]
+	leave  
+	ret  
+```
+
+### C Code (solution.c)
+```c
+#include <stdio.h>
+
+extern int asm2(int a, int b);
+
+int main(void) {
+	
+	printf("0x%x\n", asm2(0x7,0x18));
+
+	return 0;
+}
+```
+
 ### Method 2 for ASM3
+
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/33%20-%20A1weECS.png" alt="linux console"></p>
+
+### NASM Code (end_asm_rev.S)
+```assembly
+section .text
+global asm3
+
+asm3:
+	push   ebp
+	mov    ebp,esp
+	xor    eax,eax
+	mov    ah,BYTE [ebp+0x9]
+	shl    ax,0x10
+	sub    al,BYTE [ebp+0xd]
+	add    ah,BYTE [ebp+0xf]
+	xor    ax,WORD [ebp+0x10]
+	nop
+	pop    ebp
+	ret 
+```
+
+### C Code (solution.c)
+```c
+#include <stdio.h>
+
+extern int asm3(int a, int b, int c);
+
+int main(void) {
+	
+	printf("0x%x\n", asm3(0xc264bd5c,0xb5a06caa,0xad761175));
+
+	return 0;
+}
+```
 
 - - -
 
