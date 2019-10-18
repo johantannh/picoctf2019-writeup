@@ -847,9 +847,7 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 
 ### Stack during Subroutine Call
 
-<p align="center">
-<img src="https://i.imgur.com/exh4kaR.png" alt="Stack during Subroutine Call" width="500">
-</p>
+<p align="center"><img src="https://i.imgur.com/exh4kaR.png" alt="Stack during Subroutine Call" width="500"></p>
 
 ### Method 1 : Visualising the questions. 
 
@@ -1069,7 +1067,7 @@ What will asm4("picoCTF_376ee") return? Submit the flag as a hexadecimal value (
 
 ## Solution
 
->Credits to 'xnand.netlify' for writing a excellent guide for a similar question in 2018 [Here](https://xnand.netlify.com/2018/10/22/picoctf2018-assembly-0-1-2-3-4)
+>Credits to 'xnand.netlify' & 'prasantadh' for writing a excellent guide for a similar question in 2018 [Here](https://xnand.netlify.com/2018/10/22/picoctf2018-assembly-0-1-2-3-4) Or [Here](https://github.com/prasantadh/ctf_writeups/tree/master/picoCTF2018/assembly-0-1-2-3-4)
 
 An alternative approach is taken to resolve the problem. Instead of visualising the code line by line, the ASM code is converted to NASM (Netwide Assembler) code for direct execution. The process of converting includes 
 
@@ -1145,7 +1143,7 @@ asm4:
 	<+156>:	pop    ebp
 	<+157>:	ret    
 ```
-### NASM Code
+### NASM Code (end_asm_rev.S)
 
 ```assembly
 section .text
@@ -1219,6 +1217,8 @@ part_d:
 	ret    
 ```
 
+### C Code (solution.c)
+
 Next is to write a C program that uses the exported library:
 
 ```C
@@ -1233,5 +1233,23 @@ int main(void) {
 	return 0;
 }
 ```
-### Flag
+Compile the prgram as seen below : 
 
+> 'nasm -f elf32 end_asm_rev.S -o end_asm_rev.o'
+
+> 'gcc solution.c end_asm_rev.o -o solution -m32'
+
+Lastly, Run the program as following : 
+
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/32-%20fEfgFrcg.png" alt="Stack during Subroutine Call"></p>
+
+### Troubleshooting
+
+If an error is return during the execution of the solution file : 
+
+> '__cannot execute binary file: Exec format error__' Error 
+
+You may follow this solution to resolve the error from `Froosh` @ [Here](https://stackoverflow.com/questions/42120938/exec-format-error-32-bit-executable-windows-subsystem-for-linux)
+
+### Flag
+`0x24d`
