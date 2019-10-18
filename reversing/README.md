@@ -850,7 +850,7 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 <p align="center"><img src="https://i.imgur.com/exh4kaR.png" alt="Stack during Subroutine Call" width="500"></p>
 
 ### Method 1 : Visualising the questions. 
-### Method 2 : [Here](reversing#Method-2-for-ASM1)
+### Method 2 : [Here](reversing#method-2-for-asm1)
 
 `Calling asm1(0x345) >> move {0x345} into [ebp+08]`
 
@@ -913,7 +913,7 @@ What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (startin
 ## Solution
 
 ### Method 1 : Visualising the questions.
-### Method 2 : [Here](reversing#Method-2-for-ASM2)
+### Method 2 : [Here](reversing#method-2-for-asm2)
 
 `Calling asm2(0x7,0x18) >> move {0x7} into [ebp+08] & {0x18} into [ebp+0c]`
 
@@ -991,7 +991,7 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 ## Solution
 
 ### Method 1 : Visualising the questions.
-### Method 2 : [Here](reversing#Method-2-for-ASM3)
+### Method 2 : [Here](reversing#method-2-for-asm3)
 
 ### 'x86' Registers Structure
 
