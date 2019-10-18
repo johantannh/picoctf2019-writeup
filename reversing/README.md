@@ -1266,7 +1266,7 @@ You may follow this solution to resolve the error from `Froosh` @ [Here](https:/
 
 ### Method 2 for ASM1
 ### Method 2 for ASM2
-### Method 3 for ASM3
+### Method 2 for ASM3
 
 - - -
 
