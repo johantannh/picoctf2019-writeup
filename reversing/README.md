@@ -845,11 +845,12 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 
 ## Solution (2 Methods)
 
-### Stack during Subroutine Call
+### Example of the Stack during Subroutine Call
 
 <p align="center"><img src="https://i.imgur.com/exh4kaR.png" alt="Stack during Subroutine Call" width="500"></p>
 
 ### Method 1 : Visualising the questions. 
+### Method 2 : [Here](reversing#Method-2-for-ASM1)
 
 `Calling asm1(0x345) >> move {0x345} into [ebp+08]`
 
@@ -910,6 +911,9 @@ What does asm2(0x7,0x18) return? Submit the flag as a hexadecimal value (startin
 >assembly [conditions](https://www.tutorialspoint.com/assembly_programming/assembly_conditions.htm)
 
 ## Solution
+
+### Method 1 : Visualising the questions.
+### Method 2 : [Here](reversing#Method-2-for-ASM2)
 
 `Calling asm2(0x7,0x18) >> move {0x7} into [ebp+08] & {0x18} into [ebp+0c]`
 
@@ -985,6 +989,9 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 >more(?) [registers](https://wiki.skullsecurity.org/index.php?title=Registers)
 
 ## Solution
+
+### Method 1 : Visualising the questions.
+### Method 2 : [Here](reversing#Method-2-for-ASM3)
 
 ### 'x86' Registers Structure
 
@@ -1251,5 +1258,15 @@ If an error is return during the execution of the solution file :
 
 You may follow this solution to resolve the error from `Froosh` @ [Here](https://stackoverflow.com/questions/42120938/exec-format-error-32-bit-executable-windows-subsystem-for-linux)
 
+- - -
 ### Flag
 `0x24d`
+
+- - -
+
+### Method 2 for ASM1
+### Method 2 for ASM2
+### Method 3 for ASM3
+
+- - -
+
