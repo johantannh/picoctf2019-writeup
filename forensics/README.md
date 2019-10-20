@@ -136,6 +136,7 @@ Points: 250
 
 ## Solution
 
+Solution here
 
 ### Flag
 `Flag`
@@ -156,7 +157,7 @@ Points: 250
 1. Inspect the hex value and notice that there are many tar files.
 2. Each tar file name decreases by 1 value
 
-Use a simple python script to untar the file from 1000 to 0
+Use a simple [python script](like1000/untar.py) to untar the file from 1000 to 0
 
 The script done on python 3.6
 ```python
@@ -168,8 +169,8 @@ for i in range(1000, 0, -1):
 ```
 
 Inside there are
-1. filler.txt
-2. flag.png
+1. [filler.txt](like1000/filler.txt)
+2. [flag.png](like1000/flag.png)
 
 ### Flag
 `picoCTF{l0t5_0f_TAR5}`
@@ -233,7 +234,7 @@ Points: 350
 4. Fill in
     1. ip - 128.238.140.23
     2. port - 443
-    3. tcp
+    3. protocol - tcp
     4. file - picopico.key
 5. The stream will be decrypted. Now just follow the TLSv1.2 stream.
 6. Pico-Flag header is the answer
@@ -248,7 +249,7 @@ Points: 350
 Points: 450
 
 ## Problem
->We found this [packet capture](https://2019shell1.picoctf.com/static/62437b61d31d915b837cce3396c204d9/capture.pcap) and [key](https://2019shell1.picoctf.com/static/62437b61d31d915b837cce3396c204d9/picopico.key). Recover the flag. You can also find the file in /problems/webnet1_0_d63b267c607b8fedbae100068e010422.
+>We found this [packet capture](WebNet1/capture.pcap) and [key](WebNet1/picopico.key). Recover the flag. You can also find the file in /problems/webnet1_0_d63b267c607b8fedbae100068e010422.
 
 ### Hint
 > Try using a tool like Wireshark
@@ -257,9 +258,27 @@ Points: 450
 
 ## Solution
 
+1. Use wireshark
+2. Edit > Preferences > Protocols > SSL
+3. RSA keys list > Edit 
+4. Fill in
+    1. ip - 128.237.140.23
+    2. port - 443
+    3. protocol - http
+    4. file - picopico.key
+5. The stream will be decrypted. You will notice there are some `HTTP` protocols 
+6. Filter by `http` protocol(type `http` in the filter)
+7. Look at packet 41 and 42. Under the packet breakdown(right below the packet window), Right click on `Line based text data: text/html` > Export packet bytes > [second.html](WebNet1/second.html)
+8. Open second.html and notice that it is a web page with an image vulture.jpg
+9. Similarly, filter by `http` and look for the `GET vulture.jpg` trailer packet(91).
+10. Right click on `JPEG File Interchange Format` > Export packet bytes... > [vulture.jpg](WebNet1/vulture.jpg) . You will see the same image as seen in second.html
+11. Right click on the `vulture.jpg` on your pc > Properties > details
+12. The `authors` meta data has the flag.
+
+Alternatively, you can Show packet bytes and view by `Hex Dump` or `ASCII`. Metadata of an image is always stored in the file header and that is where information can be hidden.
 
 
 ### Flag
-`Flag`
+`picoCTF{honey.roasted.peanuts}`
 
 - - -

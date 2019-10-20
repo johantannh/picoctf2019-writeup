@@ -40,7 +40,7 @@ Written as part of learning experience
 | [m00nwalk](forensics#m00nwalk) 				    			 | 250    | Unsolved |
 | [shark on wire 2](forensics#shark-on-wire-2) 				     | 300    | Solved |
 | [WebNet0](forensics#WebNet0) 				                     | 350    | Solved |
-| [WebNet1](forensics#WebNet1) 				                     | 450    | Unsolved |
+| [WebNet1](forensics#WebNet1) 				                     | 450    | Solved |
 
 ## General Skills [(link)](general-skills)
 
