@@ -64,6 +64,7 @@ Written as part of learning experience
 | [mus1c](general-skills#mus1c )               	               		     | 300         | Solved |
 
 ## Reversing [(link)](reversing)
+
 | Challenges                                  | Points     | Status |
 |:--------------------------------------------|:-----------|:-------|
 | [vault-door-training](reversing#vault-door-training)      | 50         | Solved |
@@ -80,6 +81,7 @@ Written as part of learning experience
 | [reverse_cipher](reversing#reverse_cipher)       			| 300        | Unsolved |
 
 ## Cryptography [(link)](cryptography)
+
 | Challenges                                                | Points     | Status   |
 |:----------------------------------------------------------|:-----------|:---------|
 | [The Numbers ](cryptography#The-Numbers)       		 	 | 50        | Solved   |
@@ -94,6 +96,7 @@ Written as part of learning experience
 | [waves-over-lambda](cryptography#waves-over-lambda)        | 300        | Solved   |
 
 ## Web Exploitation [(link)](web-exploitation)
+
 | Challenges                                                            | Points | Status |
 |:----------------------------------------------------------------------|:-------|:-------|
 | [Insp3ct0r](web-exploitation#Insp3ct0r)                               | 50     | Solved |
