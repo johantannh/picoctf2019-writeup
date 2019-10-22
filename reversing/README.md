@@ -1266,7 +1266,7 @@ You may follow this solution to resolve the error from `Froosh` @ [Here](https:/
 
 ### Method 2 for ASM1
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/35%20-%20Aeg457Ehe.png" alt="linux console"></p>
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/35%20-%20Aeg457Ehe.png?raw=true" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
@@ -1325,7 +1325,7 @@ int main(void) {
 
 ### Method 2 for ASM2
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/34%20-%20Gd235DFwf.png" alt="linux console"></p>
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/34%20-%20Gd235DFwf.png?raw=true" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
@@ -1372,7 +1372,7 @@ int main(void) {
 
 ### Method 2 for ASM3
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/33%20-%20A1weECS.png" alt="linux console"></p>
+<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/33%20-%20A1weECS.png?raw=true" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
