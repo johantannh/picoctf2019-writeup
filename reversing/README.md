@@ -1372,7 +1372,7 @@ int main(void) {
 
 ### Method 2 for ASM3
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/33%20-%20A1weECS.png?raw=true" alt="linux console"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/33%20-%20A1weECS.png" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
