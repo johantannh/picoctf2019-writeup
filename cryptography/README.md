@@ -85,10 +85,10 @@ Points: 200
 The flag show is encoded in NATO phonetic alphabet, codes & signals. This can be seen below
 
 ### The Code : 
-![Flag](https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/3%20-%20roldVTt.png "Flag")
+![Flag](https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/3%20-%20roldVTt.png "Flag")
 
 ### Encryption Table : 
-![Table](https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/30%20-%20YPed2b4.jpg "Table")
+![Table](https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/30%20-%20YPed2b4.jpg "Table")
 
 ### Flag
 `PICOCTF{F1AG5AND5TUFF}`

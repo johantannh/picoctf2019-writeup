@@ -155,7 +155,7 @@ This vault uses for-loops and byte arrays. The source code for this vault is her
 ### Process of Encryption
 
 <p align="center">
-<img src="https://i.imgur.com/9dBCUK1.png" alt="Encryption Process" width="500">
+<img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/31%20-%209dBCUK1.png" alt="Encryption Process" width="500">
 </p>
 
 ```java
@@ -847,7 +847,7 @@ What does asm1(0x345) return? Submit the flag as a hexadecimal value (starting w
 
 ### Example of the Stack during Subroutine Call
 
-<p align="center"><img src="https://i.imgur.com/exh4kaR.png" alt="Stack during Subroutine Call" width="500"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/28%20-%20exh4kaR.png" alt="Stack during Subroutine Call" width="500"></p>
 
 ### Method 1 : Visualising the questions. 
 ### Method 2 : [Here](#method-2-for-asm1)
@@ -995,7 +995,7 @@ What does asm3(0xc264bd5c,0xb5a06caa,0xad761175) return? Submit the flag as a he
 
 ### 'x86' Registers Structure
 
-<p align="center"><img src="https://i.imgur.com/ZSn4oxn.png" alt="Stack Registers" width="500"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/27%20-%20ZSn4oxn.png" alt="Stack Registers" width="500"></p>
 
 >Credits to 'Dvd848' for writing a excellent guide for a similar question in 2018 [Here](https://github.com/Dvd848/CTFs/blob/master/2018_picoCTF/assembly-3.md)
 
@@ -1248,7 +1248,7 @@ Compile the prgram as seen below :
 
 Lastly, Run the program as following : 
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/32-%20fEfgFrcg.png" alt="linux console"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/32-%20fEfgFrcg.png" alt="linux console"></p>
 
 ### Troubleshooting
 
@@ -1266,7 +1266,7 @@ You may follow this solution to resolve the error from `Froosh` @ [Here](https:/
 
 ### Method 2 for ASM1
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/35%20-%20Aeg457Ehe.png" alt="linux console"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/35%20-%20Aeg457Ehe.png" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
@@ -1325,7 +1325,7 @@ int main(void) {
 
 ### Method 2 for ASM2
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/34%20-%20Gd235DFwf.png" alt="linux console"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/34%20-%20Gd235DFwf.png" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
@@ -1372,7 +1372,7 @@ int main(void) {
 
 ### Method 2 for ASM3
 
-<p align="center"><img src="https://github.com/johantannh/picoctf2019-writeup/blob/master/reversing/Images/33%20-%20A1weECS.png" alt="linux console"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/33%20-%20A1weECS.png" alt="linux console"></p>
 
 ### NASM Code (end_asm_rev.S)
 ```assembly
