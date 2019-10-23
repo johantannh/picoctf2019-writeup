@@ -135,11 +135,38 @@ Points: 250
 >Try fixing the file header
 
 ## Solution
+After examining a PNG image file from the picoCTF website E.g : 
 
-Solution here
+<p align="center">
+<img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/3%20-%20roldVTt.png" alt="Flag Image">
+</p>
+
+The file header can be seen using a hex viewer : 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/37%20-%20otEPtoo34.png" alt="Flag Header Image">
+</p>
+
+Using the file header as an example, arrange the original file header from this : 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/38%20-%20UIef356s.png" alt="Original File Header Image">
+</p>
+
+to this format : 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/36%20-%20sdETh43t.png" alt="Original File Header Image">
+</p>
+
+After editing the file header, save in hex editor and a new image will be obtain : 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/johantannh/picoctf2019-writeup/master/reversing/Images/1%20-%20CYP4e9C.png" alt="c0rrupt">
+</p>
 
 ### Flag
-`Flag`
+`picoCTF{c0rrupt10n_1847995}`
 
 - - - 
 
