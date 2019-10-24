@@ -36,7 +36,7 @@ Written as part of learning experience
 | [shark on wire 1](forensics#shark-on-wire-1) 				     | 150    | Solved |
 | [WhitePages](forensics#WhitePages) 				     		 | 250    | Solved |
 | [like1000](forensics#like1000) 				                 | 250    | Solved |
-| [c0rrupt](forensics#c0rrupt) 				    				 | 250    | Pending writeup  |
+| [c0rrupt](forensics#c0rrupt) 				    				 | 250    | Solved  |
 | [m00nwalk](forensics#m00nwalk) 				    			 | 250    | Unsolved |
 | [shark on wire 2](forensics#shark-on-wire-2) 				     | 300    | Solved |
 | [WebNet0](forensics#WebNet0) 				                     | 350    | Solved |
