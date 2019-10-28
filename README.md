@@ -1,6 +1,6 @@
 # picoCTF 2019 Writeup
 
-Written as part of learning experience
+Written as part of learning experience. Team with [xephersteel](https://github.com/xephersteel) and [x3sphiorx](https://github.com/x3sphiorx).
 
 ### Contents
 
